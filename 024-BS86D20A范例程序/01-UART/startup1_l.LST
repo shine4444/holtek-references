@@ -1,0 +1,78 @@
+文件：startup1_l.asm 编译器版本 HGASM0202 页次1
+
+
+   1  0000              ;;--------------------------------------------------------------;;
+   2  0000              ;;    This file is part of the Holtek C Compiler V3 package     ;;
+   3  0000              ;;    For the initialization of static linkage variables        ;;
+   4  0000              ;;    Copyright (C) 2013 Holtek Semiconductor Inc.              ;;
+   5  0000              ;;    Version: 1.04 (Above IDE3000 V7.72)                       ;;
+   6  0000              ;;    Date:    2013/12/04                                        ;;
+   7  0000              ;;--------------------------------------------------------------;;
+   8  0000              
+   9  0000              acc equ [05h]
+  10  0000              tblp equ [07h]
+  11  0000              tblh equ [08h]
+  12  0000              ;;tbhp equ [09h] 
+  13  0000              mp0 equ [01h]
+  14  0000              r1 equ [02h]
+  15  0000              mp1l equ [03h]
+  16  0000              mp1h equ [04h]
+  17  0000              z equ [0ah].2
+  18  0000              c equ [0ah].0
+  19  0000              
+  20  0000              ifndef tbhp
+  21  0000              tbhp equ [09h]
+  22  0000              endif
+  23  0000               
+  24  0000              extern startup_value_1:near
+  25  0000              
+  26  0000              @start .section 'code'
+  27  0000              begin_startup_value:
+  28  0000  0F00     E    mov a,low (offset startup_value_1) 
+  29  0001  0087          mov tblp,a
+  30  0002  0F00     E    mov a,high (offset startup_value_1) 
+  31  0003  0089          mov tbhp,a
+  32  0004              next_table:
+  33  0004                ;CLR WDT
+  34  0004  1487          inc tblp
+  35  0005  3D0A          sz z
+  36  0006  1489          inc tbhp
+  37  0007  1D01          tabrdc mp0
+  38  0008  1081          sz mp0
+  39  0009  2800     R    jmp read_data
+  40  000A  2800     R    jmp end_startup_value
+  41  000B              read_data:
+  42  000B  1487          inc tblp
+  43  000C  3D0A          sz z
+  44  000D  1489          inc tbhp
+  45  000E  1D03          tabrdc mp1l
+  46  000F  0708          mov a,tblh
+  47  0010  0084          mov mp1h,a
+  48  0011              next_data:
+  49  0011  1487          inc tblp
+  50  0012  3D0A          sz z
+  51  0013  1489          inc tbhp
+  52  0014  1D05          tabrdc acc
+  53  0015  0082          mov r1,a
+  54  0016  1781          sdz mp0
+  55  0017  2800     R    jmp $+2
+  56  0018  2800     R    jmp next_table
+  57  0019  1483          inc mp1l
+  58  001A  0708          mov a,tblh
+  59  001B  0082          mov r1,a
+文件：startup1_l.asm 编译器版本 HGASM0202 页次2
+
+  60  001C  1483          inc mp1l
+  61  001D  1781          sdz mp0
+  62  001E  2800     R    jmp next_data
+  63  001F  2800     R    jmp next_table
+  64  0020              
+  65  0020              end_startup_value:
+  66  0020              
+  67  0020                 
+  68  0000              @ROMDATA_BASE .SECTION com_l 'CODE'  
+  69  0000              startup_value:
+  70  0000              ;;linker range the initial value table here
+
+
+        0 Errors, 0

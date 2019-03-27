@@ -1,0 +1,99 @@
+
+连接器　版本8.7.7.181224
+Input Object File: E:\旧电脑资料\收集的资料\手册\合泰\024-BS86D20A范例程序\01-UART\UART.OBJ
+
+Input Library File: C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V7.x\LIB\LIBHOLTEKGCC.LIB
+Input Library File: C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V7.x\LIB\v3_lmrsc.lib
+
+
+     Bank    Start     End      Length     Class    AvgIns    Name
+     00h     0000h     0000h    0001h      CODE               @code (E:\旧电脑资料\收集的资料\手册\合泰\024-BS86D20A范例程序\01-UART\UART.OBJ)
+     00h     0001h     0001h    0001h      CODE               @start (E:\旧电脑资料\收集的资料\手册\合泰\024-BS86D20A范例程序\01-UART\UART.OBJ)
+     00h     0002h     000fh    000eh      CODE               _Interrupt_UART (E:\旧电脑资料\收集的资料\手册\合泰\024-BS86D20A范例程序\01-UART\UART.OBJ)
+     00h     0010h     001ah    000bh      CODE               _UART_Init (E:\旧电脑资料\收集的资料\手册\合泰\024-BS86D20A范例程序\01-UART\UART.OBJ)
+     00h     001bh     0022h    0008h      CODE               _UART_SEND (E:\旧电脑资料\收集的资料\手册\合泰\024-BS86D20A范例程序\01-UART\UART.OBJ)
+     00h     002ch     002fh    0004h      CODE               @Interrupt_UART_code (E:\旧电脑资料\收集的资料\手册\合泰\024-BS86D20A范例程序\01-UART\UART.OBJ)
+     00h     0030h     004ah    001bh      CODE               _Dealy (E:\旧电脑资料\收集的资料\手册\合泰\024-BS86D20A范例程序\01-UART\UART.OBJ)
+     00h     004bh     0059h    000fh      CODE               _main (E:\旧电脑资料\收集的资料\手册\合泰\024-BS86D20A范例程序\01-UART\UART.OBJ)
+     00h     0080h     0080h    0001h      DATA     3         @data_rb (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V7.x\LIB\LIBHOLTEKGCC.LIB)
+     00h     0081h     0081h    0001h      DATA     3         @data_rc (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V7.x\LIB\LIBHOLTEKGCC.LIB)
+     00h     0082h     0082h    0001h      DATA     3         @data_rd (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V7.x\LIB\LIBHOLTEKGCC.LIB)
+     00h     0083h     0083h    0001h      DATA     3         @data_re (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V7.x\LIB\LIBHOLTEKGCC.LIB)
+     00h     0084h     0084h    0001h      DATA     2         @data_r12c (isr:ra~rh)
+     00h     0085h     0085h    0001h      DATA     2         @data_r22c (isr:ra~rh)
+     00h     0086h     0086h    0001h      DATA     3         @data_ra2c (isr:ra~rh)
+     00h     0088h     0088h    0001h      DATA     1         @HCCINIT0_gc_UART_RcvData (E:\旧电脑资料\收集的资料\手册\合泰\024-BS86D20A范例程序\01-UART\UART.OBJ)
+
+     Local Sections
+
+     Bank    Start     End      Length     Class    AvgIns    Name
+     00h     0087h     0087h    0000h      LOCAL    0         @dummy44 (E:\旧电脑资料\收集的资料\手册\合泰\024-BS86D20A范例程序\01-UART\UART.OBJ)
+     00h     0087h     0087h    0000h      LOCAL    0         _Interrupt_UART (E:\旧电脑资料\收集的资料\手册\合泰\024-BS86D20A范例程序\01-UART\UART.OBJ)
+     00h     0088h     0088h    0000h      LOCAL    0         @dummy (E:\旧电脑资料\收集的资料\手册\合泰\024-BS86D20A范例程序\01-UART\UART.OBJ)
+     00h     0088h     0088h    0000h      LOCAL    0         _main (E:\旧电脑资料\收集的资料\手册\合泰\024-BS86D20A范例程序\01-UART\UART.OBJ)
+     00h     0087h     0087h    0000h      LOCAL    0         _UART_Init (E:\旧电脑资料\收集的资料\手册\合泰\024-BS86D20A范例程序\01-UART\UART.OBJ)
+     00h     0087h     0087h    0000h      LOCAL    0         _Dealy (E:\旧电脑资料\收集的资料\手册\合泰\024-BS86D20A范例程序\01-UART\UART.OBJ)
+     00h     0087h     0087h    0001h      LOCAL    2         _UART_SEND (E:\旧电脑资料\收集的资料\手册\合泰\024-BS86D20A范例程序\01-UART\UART.OBJ)
+
+     Public Symbols Information
+     Address            Public by Name
+     0030h              _Dealy
+     0002h              _Interrupt_UART
+     0010h              _UART_Init
+     001bh              _UART_SEND
+     0088h              _gc_UART_RcvData
+     004bh              _main
+     0084h              r12c
+     0085h              r22c
+     0086h              ra2c
+     0080h              rb
+     0081h              rc
+     0082h              rd
+     0083h              re
+
+     Address            Public by Value
+     0002h              _Interrupt_UART
+     0010h              _UART_Init
+     001bh              _UART_SEND
+     0030h              _Dealy
+     004bh              _main
+     0080h              rb
+     0081h              rc
+     0082h              rd
+     0083h              re
+     0084h              r12c
+     0085h              r22c
+     0086h              ra2c
+     0088h              _gc_UART_RcvData
+
+
+ROM Usage Statistics
+     Size      Used     Percentage
+     2000h     0051h    0%
+
+RAM Usage Statistics
+    Bank      Size      Used     Percentage
+     00h       0080h     0009h    7%
+     01h       0080h     0000h    0%
+     02h       0080h     0000h    0%
+     03h       0080h     0000h    0%
+     04h       0080h     0000h    0%
+     05h       0080h     0000h    0%
+     Total     0300h     0009h    1%
+
+Use Stack Count
+_Interrupt_UART: 0
+_main: 1
+
+Call Tree
+    @dummy44
+        _Interrupt_UART (0)
+    @dummy
+        _main (0)
+            _UART_Init (1)
+            _Dealy (1)
+            _UART_SEND (1)
+
+HLINK : 程序的开始执行点在程序段'@code'（地址0）。定义在'E:\旧电脑资料\收集的资料\手册\合泰\024-BS86D20A范例程序\01-UART\UART.OBJ' 文件中
+
+错误总数 : 0  警告总数 : 0

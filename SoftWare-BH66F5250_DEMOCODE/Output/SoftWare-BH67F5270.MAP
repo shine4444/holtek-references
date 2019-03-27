@@ -1,0 +1,226 @@
+
+Linker Version 8.7.3.170508
+Input Object File: D:\work_buff\IC驗證\BH67F5260\SoftWare-BH67F5270_DEMOCODE_SIG\Output\MAIN.OBJ
+Input Object File: D:\work_buff\IC驗證\BH67F5260\SoftWare-BH67F5270_DEMOCODE_SIG\Output\EEPROM.OBJ
+Input Object File: D:\work_buff\IC驗證\BH67F5260\SoftWare-BH67F5270_DEMOCODE_SIG\Output\ISR.OBJ
+Input Object File: D:\work_buff\IC驗證\BH67F5260\SoftWare-BH67F5270_DEMOCODE_SIG\Output\KEY_SCAN.OBJ
+Input Object File: D:\work_buff\IC驗證\BH67F5260\SoftWare-BH67F5270_DEMOCODE_SIG\Output\SYS_INIT.OBJ
+Input Object File: D:\work_buff\IC驗證\BH67F5260\SoftWare-BH67F5270_DEMOCODE_SIG\Output\ADC.OBJ
+Input Object File: D:\work_buff\IC驗證\BH67F5260\SoftWare-BH67F5270_DEMOCODE_SIG\Output\WORK_MODE_POLLING.OBJ
+Input Object File: D:\work_buff\IC驗證\BH67F5260\SoftWare-BH67F5270_DEMOCODE_SIG\Output\STARTUP1_L.OBJ
+Input Object File: D:\work_buff\IC驗證\BH67F5260\SoftWare-BH67F5270_DEMOCODE_SIG\Output\UART.OBJ
+
+Input Library File: C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V7.x\LIB\LIBHOLTEKGCC.LIB
+Input Library File: C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V7.x\LIB\v3_lmrmc.lib
+
+
+     Bank    Start     End      Length     Class    AvgIns    Name
+     00h     0000h     0001h    0002h      CODE               @code (D:\work_buff\IC驗證\BH67F5260\SoftWare-BH67F5270_DEMOCODE_SIG\Output\MAIN.OBJ)
+     00h     0002h     0004h    0003h      CODE               @start (D:\work_buff\IC驗證\BH67F5260\SoftWare-BH67F5270_DEMOCODE_SIG\Output\MAIN.OBJ)
+     00h     0005h     0007h    0003h      CODE               _CROM2PROM (CROM2PROM)
+     00h     0008h     000ah    0003h      CODE               _fun_Key_init (D:\work_buff\IC驗證\BH67F5260\SoftWare-BH67F5270_DEMOCODE_SIG\Output\KEY_SCAN.OBJ)
+     00h     000bh     0017h    000dh      CODE               _fun_ResetInit (D:\work_buff\IC驗證\BH67F5260\SoftWare-BH67F5270_DEMOCODE_SIG\Output\SYS_INIT.OBJ)
+     00h     0024h     0027h    0004h      CODE               @UART_ISR_code (D:\work_buff\IC驗證\BH67F5260\SoftWare-BH67F5270_DEMOCODE_SIG\Output\UART.OBJ)
+     00h     0028h     00dfh    00b8h      CODE               _UART_ISR (D:\work_buff\IC驗證\BH67F5260\SoftWare-BH67F5270_DEMOCODE_SIG\Output\UART.OBJ)
+     00h     00e2h     010ah    0029h      CODE               _fun_Key_Scan (D:\work_buff\IC驗證\BH67F5260\SoftWare-BH67F5270_DEMOCODE_SIG\Output\KEY_SCAN.OBJ)
+     00h     010bh     0154h    004ah      CODE               _fun_ADC_Polling (D:\work_buff\IC驗證\BH67F5260\SoftWare-BH67F5270_DEMOCODE_SIG\Output\ADC.OBJ)
+     00h     0155h     0167h    0013h      CODE               _Uart_Init (D:\work_buff\IC驗證\BH67F5260\SoftWare-BH67F5270_DEMOCODE_SIG\Output\UART.OBJ)
+     00h     0168h     0174h    000dh      CODE               _fun_ADC_Enable (D:\work_buff\IC驗證\BH67F5260\SoftWare-BH67F5270_DEMOCODE_SIG\Output\ADC.OBJ)
+     00h     0175h     018bh    0017h      CODE               _fun_ADC_INIT (D:\work_buff\IC驗證\BH67F5260\SoftWare-BH67F5270_DEMOCODE_SIG\Output\ADC.OBJ)
+     00h     018ch     019eh    0013h      CODE               _fun_RamInit (D:\work_buff\IC驗證\BH67F5260\SoftWare-BH67F5270_DEMOCODE_SIG\Output\SYS_INIT.OBJ)
+     00h     019fh     01b5h    0017h      CODE               _fun_PowerOnInit (D:\work_buff\IC驗證\BH67F5260\SoftWare-BH67F5270_DEMOCODE_SIG\Output\SYS_INIT.OBJ)
+     00h     01b6h     0219h    0064h      CODE               _main (D:\work_buff\IC驗證\BH67F5260\SoftWare-BH67F5270_DEMOCODE_SIG\Output\MAIN.OBJ)
+     00h     0080h     0080h    0001h      DATA     11        @data_ra (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V7.x\LIB\LIBHOLTEKGCC.LIB)
+     00h     0081h     0081h    0001h      DATA     6         @data_rb (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V7.x\LIB\LIBHOLTEKGCC.LIB)
+     00h     0082h     0082h    0001h      DATA     2         @data_r124 (isr:ra~rh)
+     00h     0083h     0083h    0001h      DATA     2         @data_r224 (isr:ra~rh)
+     00h     0084h     0084h    0001h      DATA     5         @data_ra24 (isr:ra~rh)
+     00h     0085h     0085h    0001h      DATA     2         @data_rb24 (isr:ra~rh)
+     00h     0087h     0087h    0001h      DATA     6         @HCCINIT0_gu8v_KeyUp (D:\work_buff\IC驗證\BH67F5260\SoftWare-BH67F5270_DEMOCODE_SIG\Output\KEY_SCAN.OBJ)
+     00h     0088h     0088h    0001h      DATA     5         @HCCINIT0_gu8v_KeyPress (D:\work_buff\IC驗證\BH67F5260\SoftWare-BH67F5270_DEMOCODE_SIG\Output\KEY_SCAN.OBJ)
+     00h     0089h     0089h    0001h      DATA     5         @HCCINIT0_gu8v_KeyCurrent (D:\work_buff\IC驗證\BH67F5260\SoftWare-BH67F5270_DEMOCODE_SIG\Output\KEY_SCAN.OBJ)
+     00h     008ah     008ah    0001h      DATA     5         @HCCINIT0_gbv_adc_flag (D:\work_buff\IC驗證\BH67F5260\SoftWare-BH67F5270_DEMOCODE_SIG\Output\ADC.OBJ)
+     00h     008bh     008bh    0001h      DATA     5         @HCCINIT0_gbv_adc_Sample_Mode (D:\work_buff\IC驗證\BH67F5260\SoftWare-BH67F5270_DEMOCODE_SIG\Output\ADC.OBJ)
+     00h     008ch     008ch    0001h      DATA     5         @HCCINIT0_gu8v_Sample_Count (D:\work_buff\IC驗證\BH67F5260\SoftWare-BH67F5270_DEMOCODE_SIG\Output\ADC.OBJ)
+     00h     008dh     008dh    0001h      DATA     5         @HCCINIT0_gu8v_tx_guide (D:\work_buff\IC驗證\BH67F5260\SoftWare-BH67F5270_DEMOCODE_SIG\Output\UART.OBJ)
+     00h     008eh     0093h    0006h      DATA     4.6667    @HCCINIT0_array_uart_rxbuff (D:\work_buff\IC驗證\BH67F5260\SoftWare-BH67F5270_DEMOCODE_SIG\Output\UART.OBJ)
+     00h     0094h     0094h    0001h      DATA     4         @HCCINIT0_gu8v_PGA (D:\work_buff\IC驗證\BH67F5260\SoftWare-BH67F5270_DEMOCODE_SIG\Output\MAIN.OBJ)
+     00h     0095h     0095h    0001h      DATA     4         @HCCINIT0_gu8v_KeyNoChangedTime (D:\work_buff\IC驗證\BH67F5260\SoftWare-BH67F5270_DEMOCODE_SIG\Output\KEY_SCAN.OBJ)
+     00h     0096h     0096h    0001h      DATA     3         @HCCINIT0_gu8v_KeyLast (D:\work_buff\IC驗證\BH67F5260\SoftWare-BH67F5270_DEMOCODE_SIG\Output\KEY_SCAN.OBJ)
+     00h     0097h     0097h    0001h      DATA     3         @HCCINIT0_gu8v_KeyOld (D:\work_buff\IC驗證\BH67F5260\SoftWare-BH67F5270_DEMOCODE_SIG\Output\KEY_SCAN.OBJ)
+     00h     0098h     0098h    0001h      DATA     2         @HCCINIT0_gu8v_SPEED (D:\work_buff\IC驗證\BH67F5260\SoftWare-BH67F5270_DEMOCODE_SIG\Output\MAIN.OBJ)
+     00h     0099h     0099h    0001h      DATA     2         @HCCINIT0_gu8v_KeyDown (D:\work_buff\IC驗證\BH67F5260\SoftWare-BH67F5270_DEMOCODE_SIG\Output\KEY_SCAN.OBJ)
+     00h     009ah     009fh    0006h      DATA     1.8333    @HCCINIT0_array_uart_txbuff (D:\work_buff\IC驗證\BH67F5260\SoftWare-BH67F5270_DEMOCODE_SIG\Output\UART.OBJ)
+     00h     00a0h     00a0h    0001h      DATA     1         @HCCINIT0_gu8v_halt_time (D:\work_buff\IC驗證\BH67F5260\SoftWare-BH67F5270_DEMOCODE_SIG\Output\MAIN.OBJ)
+     00h     00a1h     00a1h    0001h      DATA     1         @HCCINIT0_gu8v_uart_flag (D:\work_buff\IC驗證\BH67F5260\SoftWare-BH67F5270_DEMOCODE_SIG\Output\UART.OBJ)
+     00h     00a2h     00a2h    0001h      DATA     0         @HCCINIT0_gu8v_Keypress_time (D:\work_buff\IC驗證\BH67F5260\SoftWare-BH67F5270_DEMOCODE_SIG\Output\KEY_SCAN.OBJ)
+     00h     00a3h     00a3h    0001h      DATA     0         @HCCINIT0_gu8v_Key_status (D:\work_buff\IC驗證\BH67F5260\SoftWare-BH67F5270_DEMOCODE_SIG\Output\KEY_SCAN.OBJ)
+     00h     00a4h     00a4h    0001h      DATA     0         @HCCINIT0_gu8v_KeyCanChange (D:\work_buff\IC驗證\BH67F5260\SoftWare-BH67F5270_DEMOCODE_SIG\Output\KEY_SCAN.OBJ)
+     00h     00a5h     00b8h    0014h      DATA     0         @HCCINIT0_gs16v_adc_buff (D:\work_buff\IC驗證\BH67F5260\SoftWare-BH67F5270_DEMOCODE_SIG\Output\ADC.OBJ)
+     00h     00b9h     00b9h    0001h      DATA     0         @HCCINIT0_gu8v_rx_guide (D:\work_buff\IC驗證\BH67F5260\SoftWare-BH67F5270_DEMOCODE_SIG\Output\UART.OBJ)
+     00h     00bah     00bah    0001h      DATA     2         @data_r324 (isr:ra~rh)
+     00h     00bbh     00bbh    0001h      DATA     2         @data_r424 (isr:ra~rh)
+     00h     00bch     00bch    0001h      DATA     2         @data_r524 (isr:ra~rh)
+     00h     00bdh     00bdh    0001h      DATA     2         @data_r624 (isr:ra~rh)
+     00h     00beh     00beh    0001h      DATA     2         @data_r724 (isr:ra~rh)
+
+     Local Sections
+
+     Bank    Start     End      Length     Class    AvgIns    Name
+     00h     0087h     0087h    0000h      LOCAL    0         @dummy (D:\work_buff\IC驗證\BH67F5260\SoftWare-BH67F5270_DEMOCODE_SIG\Output\MAIN.OBJ)
+     00h     0086h     0086h    0001h      LOCAL    9         _main (D:\work_buff\IC驗證\BH67F5260\SoftWare-BH67F5270_DEMOCODE_SIG\Output\MAIN.OBJ)
+     00h     0086h     0086h    0000h      LOCAL    0         _fun_PowerOnInit (D:\work_buff\IC驗證\BH67F5260\SoftWare-BH67F5270_DEMOCODE_SIG\Output\SYS_INIT.OBJ)
+     00h     0086h     0086h    0000h      LOCAL    0         _fun_RamInit (D:\work_buff\IC驗證\BH67F5260\SoftWare-BH67F5270_DEMOCODE_SIG\Output\SYS_INIT.OBJ)
+     00h     0086h     0086h    0000h      LOCAL    0         _fun_ResetInit (D:\work_buff\IC驗證\BH67F5260\SoftWare-BH67F5270_DEMOCODE_SIG\Output\SYS_INIT.OBJ)
+     00h     0086h     0086h    0000h      LOCAL    0         _fun_Key_init (D:\work_buff\IC驗證\BH67F5260\SoftWare-BH67F5270_DEMOCODE_SIG\Output\KEY_SCAN.OBJ)
+     00h     0086h     0086h    0000h      LOCAL    0         _fun_ADC_INIT (D:\work_buff\IC驗證\BH67F5260\SoftWare-BH67F5270_DEMOCODE_SIG\Output\ADC.OBJ)
+     00h     0086h     0086h    0000h      LOCAL    0         _fun_ADC_Enable (D:\work_buff\IC驗證\BH67F5260\SoftWare-BH67F5270_DEMOCODE_SIG\Output\ADC.OBJ)
+     00h     0086h     0086h    0000h      LOCAL    0         _Uart_Init (D:\work_buff\IC驗證\BH67F5260\SoftWare-BH67F5270_DEMOCODE_SIG\Output\UART.OBJ)
+     00h     0086h     0086h    0000h      LOCAL    0         _fun_ADC_Polling (D:\work_buff\IC驗證\BH67F5260\SoftWare-BH67F5270_DEMOCODE_SIG\Output\ADC.OBJ)
+     00h     0086h     0086h    0000h      LOCAL    0         _Crom2Prom (CROM2PROM)
+     00h     0086h     0086h    0000h      LOCAL    0         _fun_Key_Scan (D:\work_buff\IC驗證\BH67F5260\SoftWare-BH67F5270_DEMOCODE_SIG\Output\KEY_SCAN.OBJ)
+     00h     0086h     0086h    0000h      LOCAL    0         @dummy36 (D:\work_buff\IC驗證\BH67F5260\SoftWare-BH67F5270_DEMOCODE_SIG\Output\UART.OBJ)
+     00h     0086h     0086h    0000h      LOCAL    0         _UART_ISR (D:\work_buff\IC驗證\BH67F5260\SoftWare-BH67F5270_DEMOCODE_SIG\Output\UART.OBJ)
+
+     Public Symbols Information
+     Address            Public by Name
+     0006h              _Crom2Prom
+     0005h              _Crom2PromNext
+     0028h              _UART_ISR
+     0155h              _Uart_Init
+     008eh              _array_uart_rxbuff
+     009ah              _array_uart_txbuff
+     0168h              _fun_ADC_Enable
+     0175h              _fun_ADC_INIT
+     010bh              _fun_ADC_Polling
+     00e2h              _fun_Key_Scan
+     0008h              _fun_Key_init
+     019fh              _fun_PowerOnInit
+     018ch              _fun_RamInit
+     000bh              _fun_ResetInit
+     008bh              _gbv_adc_Sample_Mode
+     008ah              _gbv_adc_flag
+     00a5h              _gs16v_adc_buff
+     00a4h              _gu8v_KeyCanChange
+     0089h              _gu8v_KeyCurrent
+     0099h              _gu8v_KeyDown
+     0096h              _gu8v_KeyLast
+     0095h              _gu8v_KeyNoChangedTime
+     0097h              _gu8v_KeyOld
+     0088h              _gu8v_KeyPress
+     0087h              _gu8v_KeyUp
+     00a3h              _gu8v_Key_status
+     00a2h              _gu8v_Keypress_time
+     0094h              _gu8v_PGA
+     0098h              _gu8v_SPEED
+     008ch              _gu8v_Sample_Count
+     00a0h              _gu8v_halt_time
+     00b9h              _gu8v_rx_guide
+     008dh              _gu8v_tx_guide
+     00a1h              _gu8v_uart_flag
+     01b6h              _main
+     0082h              r124
+     0083h              r224
+     00bah              r324
+     00bbh              r424
+     00bch              r524
+     00bdh              r624
+     00beh              r724
+     0080h              ra
+     0084h              ra24
+     0081h              rb
+     0085h              rb24
+
+     Address            Public by Value
+     0005h              _Crom2PromNext
+     0006h              _Crom2Prom
+     0008h              _fun_Key_init
+     000bh              _fun_ResetInit
+     0028h              _UART_ISR
+     0080h              ra
+     0081h              rb
+     0082h              r124
+     0083h              r224
+     0084h              ra24
+     0085h              rb24
+     0087h              _gu8v_KeyUp
+     0088h              _gu8v_KeyPress
+     0089h              _gu8v_KeyCurrent
+     008ah              _gbv_adc_flag
+     008bh              _gbv_adc_Sample_Mode
+     008ch              _gu8v_Sample_Count
+     008dh              _gu8v_tx_guide
+     008eh              _array_uart_rxbuff
+     0094h              _gu8v_PGA
+     0095h              _gu8v_KeyNoChangedTime
+     0096h              _gu8v_KeyLast
+     0097h              _gu8v_KeyOld
+     0098h              _gu8v_SPEED
+     0099h              _gu8v_KeyDown
+     009ah              _array_uart_txbuff
+     00a0h              _gu8v_halt_time
+     00a1h              _gu8v_uart_flag
+     00a2h              _gu8v_Keypress_time
+     00a3h              _gu8v_Key_status
+     00a4h              _gu8v_KeyCanChange
+     00a5h              _gs16v_adc_buff
+     00b9h              _gu8v_rx_guide
+     00bah              r324
+     00bbh              r424
+     00bch              r524
+     00bdh              r624
+     00beh              r724
+     00e2h              _fun_Key_Scan
+     010bh              _fun_ADC_Polling
+     0155h              _Uart_Init
+     0168h              _fun_ADC_Enable
+     0175h              _fun_ADC_INIT
+     018ch              _fun_RamInit
+     019fh              _fun_PowerOnInit
+     01b6h              _main
+
+
+ROM Usage Statistics
+    Bank      Size      Used     Percentage
+     00h       2000h     020ch    6%
+     01h       2000h     0000h    0%
+     Total     4000h     020ch    3%
+
+RAM Usage Statistics
+    Bank      Size      Used     Percentage
+     00h       0080h     003fh    49%
+     01h       0080h     0000h    0%
+     02h       0080h     0004h    3%
+     03h       0080h     0000h    0%
+     04h       0080h     0000h    0%
+     05h       0080h     0000h    0%
+     06h       0080h     0000h    0%
+     07h       0080h     0000h    0%
+     Total     0400h     0043h    6%
+
+Use Stack Count
+_main: 3
+_UART_ISR: 1
+
+Call Tree
+    @dummy
+        _main (0)
+            _fun_PowerOnInit (1)
+                _fun_RamInit (2)
+                _fun_ResetInit (2)
+                    _fun_Key_init (3)
+            _fun_ADC_INIT (1)
+            _fun_ADC_Enable (1)
+            _Uart_Init (1)
+            _fun_ResetInit (1)
+                _fun_Key_init (2)
+            _fun_ADC_Polling (1)
+                _Crom2Prom (2)
+            _fun_Key_Scan (1)
+    @dummy36
+        _UART_ISR (0)
+            _Crom2Prom (1)
+
+HLINK: Program entry point at section '@code' (address 0) of file 'D:\work_buff\IC驗證\BH67F5260\SoftWare-BH67F5270_DEMOCODE_SIG\Output\MAIN.OBJ'
+
+Total 0 error(s), Total 0 Warning(s)

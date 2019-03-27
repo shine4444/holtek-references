@@ -1,0 +1,1490 @@
+				;file D:\work_buff\IC喷靡\BH67F5260\SoftWare-BH67F5270_DEMOCODE_SIG\User\Main.c
+				;1	//___________________________________________________________________
+				;2	//___________________________________________________________________
+				;3	//  Copyright : 2018 BY HOLTEK SEMICONDUCTOR INC
+				;4	//  File Name : Main.c
+				;5	// Description: 
+				;6	//Targer Board: 
+				;7	//   MCU      : BH67F5270
+				;8	//   Author   : ming
+				;9	//   Date     : 2018/03/26
+				;10	//   Version  : V00
+				;11	//   History  :
+				;12	//___________________________________________________________________
+				;13	//___________________________________________________________________
+				;14	#include "common.h"
+				;15	u8	gu8v_halt_time;
+				;16	
+				;17	u8	gu8v_PGA;
+				;18	u8	gu8v_SPEED;
+				;19	
+				;20	void main()
+				;21	{
+				@code .SECTION 'CODE'
+				include BH67F5260.inc
+0000	1F0B	clr     PBP
+0001	2802	jmp     _main_startup1
+				@start .SECTION 'CODE'
+				_main_startup1:
+				@start .SECTION 'CODE'
+0002	0F00	mov     a, 0H
+0003	008B	mov     PBP, a
+0004	29B6	jmp     _main
+0005	1483	inc     MP1L
+				L0006:
+0006	0702	mov     a, __iar1[0]
+0007	0003	ret
+				;22	//	u8	i;
+				;23		//判斷是否是上電復位或者是正常情況下的非正常復位
+				;24		//如果成立則執行上電初始化動作，反之則執行WDT溢出初始化
+				;25		if(_to ==0 || _pdf ==0)									//WDT1	Reset
+				_main:
+				_main:
+01B6	3A8A	snz     TO
+01B7	29BA	jmp     _L2
+01B8	3E0A	sz      PDF
+01B9	29C3	jmp     _L3
+				;26		{	
+01C2	29C4	jmp     _L4
+				;27			//上電復位或者是正常情況下的非正常復位
+				;28			fun_PowerOnInit();	                                   
+				_L2:
+01BA	219F	call    _fun_PowerOnInit
+				;29			fun_ADC_INIT();
+01BB	2175	call    _fun_ADC_INIT
+				;30			fun_ADC_Enable();	
+01BC	2168	call    _fun_ADC_Enable
+				;31			SET_DAC_ENABLE();
+01BD	33F1	set     DSDACEN
+				;32			SET_DACVREF_VOREG();
+01BE	3771	clr     DSDACVRS
+				;33			SET_DSOP_VCM() ;
+01BF	0F0A	mov     a, AH
+01C0	00F2	mov     DSOPC, a
+				;34			Uart_Init();		
+01C1	2155	call    _Uart_Init
+				;35		}
+				;36		else													
+				;37		{
+				;38			//WDT 溢出復位
+				;39			fun_ResetInit();
+				_L3:
+01C3	200B	call    _fun_ResetInit
+				;40	
+				;41		}
+				;42	   // TEST_LCD()  ;  
+				;43	
+				;44		while(1)
+				;45		{	
+				;46			//清除看門狗
+				;47			GCC_CLRWDT();
+				_L4:
+01C4	0001	clr     wdt
+				;48			//用於計時
+				;49			fun_ADC_Polling();
+01C5	210B	call    _fun_ADC_Polling
+				;50			//判斷是否要進入睡眠
+				;51			if(gu8v_halt_time<LU8C_HALT_TIME)
+01C6	0F13	mov     a, 13H
+01C7	4220	sub     a, gu8v_halt_time[0]
+01C8	380A	snz     C
+01C9	29C4	jmp     _L4
+				;52			{
+				;53				if(_ptm2af)
+01CA	3B9C	snz     PTM2AF
+01CB	29C4	jmp     _L4
+				;54				{	
+				;55					//10ms 循環					
+				;56					_ptm2af = 0;
+01CC	379C	clr     PTM2AF
+				;57					//按键扫描
+				;58					fun_Key_Scan();	
+01CD	20E2	call    _fun_Key_Scan
+				;59					//
+				;60					//fun_work_polling();
+				;61					if(gbv_start_up)
+01CE	7807	snz     gu8v_KeyUp[0].0
+01CF	2A0F	jmp     _L10
+				;62					{
+				;63						gbv_start_up = 0;
+01D0	7407	clr     gu8v_KeyUp[0].0
+				;64						GCC_NOP();
+01D1	0000	nop
+				;65						gu8v_PGA++;
+01D2	5414	inca    gu8v_PGA[0]
+01D3	4080	mov     ra, a
+01D8	4700	mov     a, ra
+01D9	4094	mov     gu8v_PGA[0], a
+01DA	29DC	jmp     _L12
+				;66						if(gu8v_PGA>=8)
+01D4	0F07	mov     a, 7H
+01D5	4200	sub     a, ra
+01D6	380A	snz     C
+01D7	29DB	jmp     _L11
+				;67						{
+				;68							gu8v_PGA = 0;
+				_L11:
+01DB	5F14	clr     gu8v_PGA[0]
+				;69							
+				;70						}
+				;71						if(gu8v_PGA == 0)
+				_L12:
+01DC	4714	mov     a, gu8v_PGA[0]
+01DD	4086	mov     _main_2, a
+01DE	5086	sz      _main_2
+01DF	29E2	jmp     _L13
+				;72						{
+				;73							SET_ADC_PGA_1();		
+01E0	3569	clr     PGS2
+01E1	29F9	jmp     _L34
+				;74							
+				;75						}
+				;76						else if(gu8v_PGA == 1)
+				_L13:
+01E2	5706	sdza    _main_2
+01E3	29E6	jmp     _L14
+				;77						{
+				;78							SET_ADC_PGA_2();				
+01E4	3569	clr     PGS2
+01E5	2A00	jmp     _L35
+				;79						}
+				;80						else if(gu8v_PGA == 2)
+				_L14:
+01E6	4706	mov     a, _main_2
+01E7	0A02	sub     a, 2H
+01E8	390A	snz     Z
+01E9	29EE	jmp     _L15
+				;81						{
+				;82							SET_ADC_PGA_4();	
+01EA	3569	clr     PGS2
+				_L31:
+01EB	30E9	set     PGS1
+				_L30:
+01EC	3469	clr     PGS0
+01ED	2A0F	jmp     _L10
+				;83						}					
+				;84						else if(gu8v_PGA == 3)
+				_L15:
+01EE	4706	mov     a, _main_2
+01EF	0A03	sub     a, 3H
+01F0	390A	snz     Z
+01F1	29F4	jmp     _L16
+				;85						{
+				;86							SET_ADC_PGA_8();
+01F2	3569	clr     PGS2
+01F3	2A0D	jmp     _L33
+				;87						}
+				;88						else if(gu8v_PGA == 4)
+				_L16:
+01F4	4706	mov     a, _main_2
+01F5	0A04	sub     a, 4H
+01F6	390A	snz     Z
+01F7	29FB	jmp     _L17
+				;89						{
+				;90							SET_ADC_PGA_16();
+01F8	3169	set     PGS2
+				_L34:
+01F9	34E9	clr     PGS1
+01FA	29EC	jmp     _L30
+				;91						}					
+				;92						else if(gu8v_PGA == 5)
+				_L17:
+01FB	4706	mov     a, _main_2
+01FC	0A05	sub     a, 5H
+01FD	390A	snz     Z
+01FE	2A02	jmp     _L18
+				;93						{
+				;94							SET_ADC_PGA_32();
+01FF	3169	set     PGS2
+				_L35:
+0200	34E9	clr     PGS1
+0201	2A0E	jmp     _L32
+				;95						}					
+				;96						else if(gu8v_PGA == 6)
+				_L18:
+0202	4706	mov     a, _main_2
+0203	0A06	sub     a, 6H
+0204	390A	snz     Z
+0205	2A08	jmp     _L19
+				;97						{
+				;98							SET_ADC_PGA_64();
+0206	3169	set     PGS2
+0207	29EB	jmp     _L31
+				;99						}					
+				;100						else if(gu8v_PGA == 7)
+				_L19:
+0208	4706	mov     a, _main_2
+0209	0A07	sub     a, 7H
+020A	390A	snz     Z
+020B	2A0F	jmp     _L10
+				;101						{
+				;102							SET_ADC_PGA_128();
+020C	3169	set     PGS2
+				_L33:
+020D	30E9	set     PGS1
+				_L32:
+020E	3069	set     PGS0
+				;103						}										
+				;104						
+				;105					}
+				;106					
+				;107					
+				;108					if(gbv_set_up)
+				_L10:
+020F	7907	snz     gu8v_KeyUp[0].2
+0210	29C4	jmp     _L4
+				;109					{
+				;110						gbv_set_up = 0;
+0211	7507	clr     gu8v_KeyUp[0].2
+				;111						GCC_NOP();
+0212	0000	nop
+				;112						if(gu8v_SPEED>=4)
+0213	0F03	mov     a, 3H
+0214	4218	sub     a, gu8v_SPEED[0]
+0215	3C0A	sz      C
+0216	29C4	jmp     _L4
+				;113						{
+				;114							gu8v_SPEED = 0;
+0217	5F18	clr     gu8v_SPEED[0]
+0218	29C4	jmp     _L4
+0219	2A19	jmp     $
+				;115							
+				;116						}					
+				;117						if(gu8v_SPEED == 0)
+				;118						{
+				;119								
+				;120							
+				;121						}
+				;122						else if(gu8v_SPEED == 1)
+				;123						{
+				;124							
+				;125						}
+				;126						else if(gu8v_SPEED == 2)
+				;127						{
+				;128							
+				;129						}					
+				;130						else if(gu8v_SPEED == 3)
+				;131						{
+				;132							
+				;133						}					
+				;134					}				
+				;135					
+				;136				}		
+				;137			}
+				;138			else
+				;139			{
+				;140	
+				;141			}
+				;142		}
+				;143	}
+				;144	
+				;145	
+				;146	
+				;147	
+				;148	
+				;file D:\work_buff\IC喷靡\BH67F5260\SoftWare-BH67F5270_DEMOCODE_SIG\User\Key_Scan.c
+				;1	//___________________________________________________________________
+				;2	//___________________________________________________________________
+				;3	//  Copyright : 2018 BY HOLTEK SEMICONDUCTOR INC
+				;4	//  File Name : Key_scan.c
+				;5	// Description: 
+				;6	//Targer Board: 
+				;7	//   MCU      : BH67F5270
+				;8	//   Author   : ming
+				;9	//   Date     : 2018/03/26
+				;10	//   Version  : V00
+				;11	//   History  :
+				;12	//___________________________________________________________________
+				;13	//___________________________________________________________________
+				;14	#include "common.h"
+				;15	
+				;16	/************************Key_Scan Variable****************/
+				;17	volatile	__byte_type  gu8v_KeyCurrent;
+				;18	volatile	__byte_type   gu8v_KeyDown;			
+				;19	volatile	u8	gu8v_KeyOld;
+				;20	volatile	u8	gu8v_KeyNoChangedTime;
+				;21	volatile	__byte_type  gu8v_KeyPress;
+				;22	
+				;23	volatile	__byte_type	gu8v_KeyUp;
+				;24	volatile	u8	gu8v_KeyLast;
+				;25	volatile	u8 	gu8v_KeyCanChange;
+				;26	volatile	__byte_type 	gu8v_Key_status;
+				;27	volatile	u8 	gu8v_Keypress_time;
+				;28	
+				;29	
+				;30	/********************************************************************
+				;31	Function:	fun_Key_dealwith
+				;32	INPUT	:
+				;33	OUTPUT	:	
+				;34	NOTE	:   
+				;35	********************************************************************/
+				;36	void	fun_Key_init(void)
+				;37	{
+				;38	//	GPIO_KEY_START_WU = 1;	
+				;39		GPIO_KEY_START_PU = 1;
+				_fun_Key_init:
+				_fun_Key_init:
+0008	31A6	set     PBPU3
+				;40		GPIO_KEY_START_IO = 1;
+0009	31A5	set     PBC3
+000A	0003	ret
+				;41		
+				;42	//	GPIO_KEY_MEMORY_WU	= 1;	
+				;43	//	GPIO_KEY_MEMORY_PU	= 1;
+				;44	//	GPIO_KEY_MEMORY_IO	= 1;
+				;45			
+				;46	//	GPIO_KEY_SET_WU	= 1;	
+				;47	//	GPIO_KEY_SET_PU	= 1;
+				;48	//	GPIO_KEY_SET_IO	= 1;	
+				;49	}
+				;50	/********************************************************************
+				;51	Function:	fun_Key_dealwith
+				;52	INPUT	:
+				;53	OUTPUT	:	
+				;54	NOTE	:   
+				;55	********************************************************************/
+				;56	void	fun_Key_dealwith(void)
+				;57	{
+				;58	
+				;59	}
+				;60	
+				;61	/********************************************************************
+				;62	Function:	Key_Scan
+				;63	INPUT	:
+				;64	OUTPUT	:	
+				;65	NOTE	:   
+				;66	********************************************************************/
+				;67	void	fun_Key_Scan(void)
+				;68	{
+				;69	
+				;70		gu8v_KeyCurrent.u8 = 0;
+				_fun_Key_Scan:
+				_fun_Key_Scan:
+00E2	5F09	clr     gu8v_KeyCurrent[0]
+				;71		
+				;72		if(GPIO_KEY_START == 0)
+00E3	3DA4	sz      PB3
+00E4	28E6	jmp     _L4
+				;73		{
+				;74			gu8v_KeyCurrent.bits.b0 = 1;;
+00E5	7009	set     gu8v_KeyCurrent[0].0
+				;75		}
+				;76	//	if(GPIO_KEY_MEMORY == 0)
+				;77	//	{
+				;78	//		gu8v_KeyCurrent.bits.b1 = 1;;
+				;79	//	}
+				;80		if(GPIO_KEY_SET == 0)
+				_L4:
+00E6	3F94	sz      PA7
+00E7	28E9	jmp     _L5
+				;81		{
+				;82			gu8v_KeyCurrent.bits.b2 = 1;;
+00E8	7109	set     gu8v_KeyCurrent[0].2
+				;83		}	
+				;84	
+				;85		if(gu8v_KeyCurrent.u8 != gu8v_KeyOld)  			//
+				_L5:
+00E9	4709	mov     a, gu8v_KeyCurrent[0]
+00EA	4217	sub     a, gu8v_KeyOld[0]
+00EB	3D0A	sz      Z
+00EC	28F3	jmp     _L6
+				;86		{
+				;87			gu8v_KeyNoChangedTime = 0;       				//
+00ED	5F15	clr     gu8v_KeyNoChangedTime[0]
+				;88			gu8v_KeyOld = gu8v_KeyCurrent.u8;        		//
+00EE	4709	mov     a, gu8v_KeyCurrent[0]
+00EF	4097	mov     gu8v_KeyOld[0], a
+				;89			gu8v_KeyDown.u8 = 0;
+00F0	5F19	clr     gu8v_KeyDown[0]
+				;90			gu8v_KeyUp.u8 = 0;
+00F1	5F07	clr     gu8v_KeyUp[0]
+				;91			return;  										//
+00F2	290A	jmp     _L3
+				;92		}
+				;93		else
+				;94		{	
+				;95			gu8v_KeyNoChangedTime++;	     				//
+				_L6:
+00F3	5495	inc     gu8v_KeyNoChangedTime[0]
+				;96			if(gu8v_KeyNoChangedTime >= LUCC_KEY_DEBOUNCE)	//50
+00F4	0F04	mov     a, 4H
+00F5	4215	sub     a, gu8v_KeyNoChangedTime[0]
+00F6	3C0A	sz      C
+00F7	290A	jmp     _L3
+				;97			{
+				;98				gu8v_KeyNoChangedTime = LUCC_KEY_DEBOUNCE;	
+00F8	0F05	mov     a, 5H
+00F9	4095	mov     gu8v_KeyNoChangedTime[0], a
+				;99				gu8v_KeyPress.u8 = gu8v_KeyOld;      			//
+00FA	4717	mov     a, gu8v_KeyOld[0]
+00FB	4088	mov     gu8v_KeyPress[0], a
+				;100			    gu8v_KeyDown.u8 = gu8v_KeyPress.u8 & (gu8v_KeyPress.u8 ^ gu8v_KeyLast);// 
+00FC	4716	mov     a, gu8v_KeyLast[0]
+00FD	4408	xor     a, gu8v_KeyPress[0]
+00FE	4080	mov     ra, a
+00FF	4700	mov     a, ra
+0100	4608	and     a, gu8v_KeyPress[0]
+0101	4099	mov     gu8v_KeyDown[0], a
+				;101				gu8v_KeyUp.u8 |= gu8v_KeyLast&(~gu8v_KeyPress.u8);     //	
+0102	4108	cpla    gu8v_KeyPress[0]
+0103	4080	mov     ra, a
+0104	4716	mov     a, gu8v_KeyLast[0]
+0105	4680	andm    a, ra
+0106	4700	mov     a, ra
+0107	4587	orm     a, gu8v_KeyUp[0]
+				;102			    gu8v_KeyLast = gu8v_KeyPress.u8;            	// 
+0108	4708	mov     a, gu8v_KeyPress[0]
+0109	4096	mov     gu8v_KeyLast[0], a
+				_L3:
+010A	0003	ret
+				;103			}
+				;104		}
+				;105	
+				;106	}
+				;107	
+				;file D:\work_buff\IC喷靡\BH67F5260\SoftWare-BH67F5270_DEMOCODE_SIG\User\Sys_Init.C
+				;1	//___________________________________________________________________
+				;2	//___________________________________________________________________
+				;3	//  Copyright : 2018 BY HOLTEK SEMICONDUCTOR INC
+				;4	//  File Name : sys_init.c
+				;5	// Description: 
+				;6	//Targer Board: 
+				;7	//   MCU      : BH67F5270
+				;8	//   Author   : ming
+				;9	//   Date     : 2018/03/26
+				;10	//   Version  : V00
+				;11	//   History  :
+				;12	//___________________________________________________________________
+				;13	//___________________________________________________________________
+				;14	#include "common.h"
+				;15	
+				;16	
+				;17	/********************************************************************
+				;18	Function: MCU復位初始化
+				;19	INPUT	:
+				;20	OUTPUT	:
+				;21	NOTE	:
+				;22	********************************************************************/
+				;23	void fun_ResetInit()
+				;24	{
+				;25	//	//IO
+				;26		fun_GPIO();
+				;27	// 	Uart_Init();	
+				;28	// 	//ptm2
+				;29		SETPTM2_5MS();
+				_fun_ResetInit:
+				_fun_ResetInit:
+000B	0F48	mov     a, 48H
+000C	80A8	lmov    PTM2C0, a
+000E	0FC1	mov     a, C1H
+000F	80A9	lmov    PTM2C1, a
+0011	0FA4	mov     a, A4H
+0012	80AC	lmov    PTM2AL, a
+0014	9F2D	lclr    PTM2AH
+				;30	// 	
+				;31	// 	//TimeBase 
+				;32	
+				;33	//	_emi  = 1;	//開啟TimeBase 1作為喚醒檢測
+				;34		fun_Key_init();
+0016	2008	call    _fun_Key_init
+0017	0003	ret
+				org	024h
+				;35		
+				;36		
+				;37		
+				;38	}
+				;39	/********************************************************************
+				;40	Function: MCU上電初始化
+				;41	INPUT	:
+				;42	OUTPUT	:
+				;43	NOTE	:
+				;44	********************************************************************/
+				;45	void fun_PowerOnInit()
+				;46	{
+				;47		//LVR
+				;48		SETLVR_Voltage2_1();
+				_fun_PowerOnInit:
+				_fun_PowerOnInit:
+019F	0F55	mov     a, 55H
+01A0	0099	mov     LVRC, a
+				;49		//IAP not need	to init
+				;50		//EEPROM not need to init
+				;51		//RAM
+				;52		fun_RamInit();
+01A1	218C	call    _fun_RamInit
+				;53	   	SETHIRC_4MHZ();
+01A2	3590	clr     FHS
+01A3	3591	clr     HIRC1
+01A4	3511	clr     HIRC0
+01A5	3011	set     HIRCEN
+				;54	  	SETLXT_32768(); 
+01A6	3110	set     FSS
+01A7	B2D3	lset    PAS05
+01A9	B253	lset    PAS04
+01AB	B0D3	lset    PAS01
+01AD	B053	lset    PAS00
+01AF	3013	set     LXTEN
+				;55		//WDT
+				;56		SETWDTtime2048ms();
+01B0	0F55	mov     a, 55H
+01B1	009E	mov     WDTC, a
+				;57		//LVR
+				;58		SETLVR_Voltage2_1();
+01B2	0F55	mov     a, 55H
+01B3	0099	mov     LVRC, a
+				;59		//IO
+				;60		fun_ResetInit();
+01B4	200B	call    _fun_ResetInit
+01B5	0003	ret
+				;61		
+				;62		
+				;63	//	fun_CAL_REEPROM();	
+				;64	}
+				;65	/********************************************************************
+				;66	Function: 關閉各個模塊進入HLAT模式
+				;67	INPUT	:
+				;68	OUTPUT	:
+				;69	NOTE	:
+				;70	********************************************************************/
+				;71	void fun_PrepareToHalt()
+				;72	{
+				;73	
+				;74	
+				;75	
+				;76	}
+				;77	
+				;78	
+				;79	//HALT
+				;80	//SLEEPMode0	@(IDLEN==0  & LVDEN==Disable & WDT Disable )
+				;81	//Stop:CPU,Fsub,Fs,Disable WDT,LVDEN must Disable
+				;82	
+				;83	//SLEEPMode1	@(IDLEN==0  & (LVDEN==Disable || WDT Disable) )
+				;84	//Stop:CPU,Fsub,Fs,
+				;85	//Run :Enable WDT or LVDEN
+				;86	
+				;87	//IDLEMode0		@(IDLEN==1  & FSYSON==0 )
+				;88	//Stop:CPU,Fs
+				;89	//Run :Fsub
+				;90	
+				;91	//IDLEMode1		@(IDLEN==1  & FSYSON==1 )
+				;92	//Stop:CPU
+				;93	//Run :Fs,Fsub
+				;94	
+				;95	
+				;96	
+				;97	/********************************************************************
+				;98	Function: GPIO初始化
+				;99	INPUT	: none
+				;100	OUTPUT	: none
+				;101	NOTE	: 所有IO config為輸出low
+				;102	********************************************************************/
+				;103	void fun_GPIO()
+				;104	{
+				;105	
+				;106	
+				;107	
+				;108	
+				;109	}
+				;110	/********************************************************************
+				;111	Function:Ram_Init
+				;112	INPUT	:
+				;113	OUTPUT	:
+				;114	NOTE	:BH67F2260 
+				;115	********************************************************************/
+				;116	void fun_RamInit()
+				;117	{
+				;118		_mp1h = 0;
+				_fun_RamInit:
+				_fun_RamInit:
+018C	1F04	clr     MP1H
+				;119		_mp1l = 0x80;
+018D	0F80	mov     a, 80H
+018E	0083	mov     MP1L, a
+				;120		while(_mp1h<RamBankSectorSum)
+018F	299A	jmp     _L5
+				_L5:
+019A	0F04	mov     a, 4H
+019B	0204	sub     a, MP1H
+019C	3C0A	sz      C
+019D	2990	jmp     _L8
+019E	0003	ret
+				;121		{
+				;122			for(_tblp = 0x00;_tblp < 128;_tblp++)
+				_L8:
+0190	1F07	clr     TBLP
+				_L6:
+0191	3F87	sz      TBLP.7
+0192	2997	jmp     _L10
+0195	1487	inc     TBLP
+0196	2991	jmp     _L6
+				;123			{
+				;124				 _iar1 = 0;
+0193	1F02	clr     __iar1[0]
+				;125				  _mp1l++;
+0194	1483	inc     MP1L
+				;126			}
+				;127			_mp1l = 0x80;		
+				_L10:
+0197	0F80	mov     a, 80H
+0198	0083	mov     MP1L, a
+				;128			_mp1h++;
+0199	1484	inc     MP1H
+				;129		}		
+				;130	}
+				;131	
+				;file D:\work_buff\IC喷靡\BH67F5260\SoftWare-BH67F5270_DEMOCODE_SIG\User\Uart.c
+				;1	#include "common.h"
+				;2	
+				;3	/*************************************************************************************/
+				;4	//**	Copyright	:	2016 BY HOLTEK SEMICONDUCTOR INC                            **
+				;5	//** 	File Name   :	Uart.c                                                      **
+				;6	//**	Description	: 	Uart 通信													**
+				;7	//**	TargerBoard	: 	None														**
+				;8	//**	MCU      	: 	HT67F5650													**
+				;9	//**	Author   	: 	LJQ															**
+				;10	//**	Date     	: 	2015/11/20													**
+				;11	//**	Version  	: 	V00															**
+				;12	//**	History  	:																**
+				;13	/*************************************************************************************/
+				;14	
+				;15	
+				;16	/********************************************************************
+				;17	Function:	DEFINE
+				;18	********************************************************************/
+				;19	#define		cmd_return_op1adnum			30
+				;20	#define		cmd_return_op2adnum			31
+				;21	#define		cmd_adjust_bandgap_up		32
+				;22	#define		cmd_adjust_bandgap_down		33
+				;23	#define		cmd_data_to_pref			34
+				;24	#define		cmd_data_to_rom				35
+				;25	#define		cmd_adjust_daco_up			37
+				;26	#define		cmd_adjust_daco_down		38
+				;27	#define		UCR1_8_N_1     				0x80      //8bits-Data  NONE-Parity 1bit-Stop Format
+				;28	#define 	UCR1_7_O_1     				0x0B0     //7bits-Data  Odd-Parity  1bit-Stop Format
+				;29	#define		UCR1_7_E_1     				0x0A0     //7bits-Data  Even-Parity 1bit-Stop Format
+				;30	#define		UCR1_9_N_1     				0x0C0     //9bits-Data  NONE-Parity 1bit-Stop Format
+				;31	#define		UCR1_8_O_1    				0x0F0     //8bits-Data  Odd-Parity  1bit-Stop Format
+				;32	#define		UCR1_8_E_1     				0x0E0     //8bits-Data  Even-Parity 1bit-Stop Format
+				;33	#define		UCR1_8_N_2     				0x88      //8bits-Data  NONE-Parity 2bits-Stop Format
+				;34	#define		UCR1_7_O_2     				0x0B8     //7bits-Data  Odd-Parity  2bits-Stop Format
+				;35	#define		UCR1_7_E_2     				0x0A8     //7bits-Data  Even-Parity 2bits-Stop Format
+				;36	#define		UCR1_9_N_2     				0x0C8     //9bits-Data  NONE-Parity 2bits-Stop Format
+				;37	#define		UCR1_8_O_2     				0x0F8     //8bits-Data  Odd-Parity  2bits-Stop Format
+				;38	#define		UCR1_8_E_2     				0x0E8     //8bits-Data  Even-Parity 2bits-Stop Format
+				;39	#define		UCR2Data       				0x0E4     //Enable TXEN RXEN BRGH RIE 
+				;40	#define		UCR2Data1       			0x0Ef     //Enable TXEN RXEN BRGH RIE 
+				;41	#define		BRGData        				12		  //4mhz0x19       //Baud=9600,BRGH=1,N=25 
+				;42	
+				;43	
+				;44	
+				;45	volatile	u8	gu8v_rx_guide;
+				;46	volatile	u8	gu8v_tx_guide;
+				;47	volatile	__byte_type	gu8v_uart_flag;
+				;48	volatile	u8	array_uart_txbuff[LU8C_TX_BUFF_LENGHT];
+				;49	volatile	u8	array_uart_rxbuff[6];
+				;50	
+				;51	//-------------------------------------- IO 家览 Uart ---------------------------------------------
+				;52	//	
+				;53	//	 9600 --> 104 us / bit
+				;54	//
+				;55	
+				;56	#define UART_IO_DELAY  4
+				;57	#define Uart_IO_TX _pa1
+				;58	
+				;59	 
+				;60	void delay_uart(volatile u16 lu8v_Uart_time)
+				;61	{
+				;62		while(lu8v_Uart_time--)
+				;63		{
+				;64		//	GCC_CLRWDT();
+				;65		}		
+				;66	}
+				;67	
+				;68	
+				;69	
+				;70	void Uart_IO_SendOneByte(u8 lu8v_Uart_byte)
+				;71	{
+				;72	//	u8 lu8v_Uart_i;
+				;73	//	_pac1 =0;
+				;74	//	Uart_IO_TX	= 0;
+				;75	////	delay_uart(UART_IO_DELAY);
+				;76	//	GCC_DELAY(99);
+				;77	//	
+				;78	//	for(lu8v_Uart_i=0;lu8v_Uart_i<8;lu8v_Uart_i++)
+				;79	//	{	
+				;80	//		if(lu8v_Uart_byte & 0x01)
+				;81	//		{
+				;82	//			Uart_IO_TX = 1;
+				;83	//		} 
+				;84	//		else
+				;85	//		{
+				;86	//			GCC_DELAY(3);
+				;87	//			Uart_IO_TX = 0;
+				;88	//		}
+				;89	//		
+				;90	//		GCC_DELAY(93);
+				;91	//	
+				;92	//		lu8v_Uart_byte = lu8v_Uart_byte >> 1;
+				;93	//	}	
+				;94	//	GCC_DELAY(3);
+				;95	//	Uart_IO_TX	= 1;
+				;96	//	delay_uart(UART_IO_DELAY);
+				;97	//	GCC_DELAY(5);
+				;98		
+				;99	}
+				;100	
+				;101	
+				;102	
+				;103	
+				;104	
+				;105	
+				;106	
+				;107	/********************************************************************
+				;108	Function:	Key_Scan
+				;109	INPUT	:
+				;110	OUTPUT	:	
+				;111	NOTE	:   
+				;112	********************************************************************/
+				;113	void Uart_Init(void)
+				;114	{
+				;115		_umd = 1;
+				_Uart_Init:
+				_Uart_Init:
+0155	322F	set     UMD
+				;116	//	_pds0 = 0b10100000;//set tx rx pin
+				;117	
+				;118		_pcs13 = 1;
+0156	B1D8	lset    PCS13
+				;119		_pcs12 = 0;
+0158	B558	lclr    PCS12
+				;120		_pcs11 = 1;
+015A	B0D8	lset    PCS11
+				;121		_pcs10 = 0;
+015C	B458	lclr    PCS10
+				;122	    _uucr1 = UCR1_8_N_1;     //enable UART function,8bits-Data  NONE-Parity 1bit-Stop Format
+015E	0F80	mov     a, 80H
+015F	00B0	mov     SIMC1, a
+				;123	    _uucr2 = UCR2Data1;       //enable TXEN,RXEN,Hige Speed Baud Rate, Receiver interrupt enable 
+0160	0FEF	mov     a, EFH
+0161	00B1	mov     SIMA, a
+				;124		_urie = 1;
+0162	3131	set     SIMA.2
+				;125	
+				;126	   	_ubrg = 12;         //19200 Baud Rate	
+0163	0F0C	mov     a, CH
+0164	00B3	mov     SIMTOC, a
+				;127	
+				;128	//	_euti = 1;      			//UART interrupt enable
+				;129		_usime = 1;      			//UART interrupt enable	
+0165	30A2	set     USIME
+				;130		_emi = 1;
+0166	3020	set     EMI
+0167	0003	ret
+				;131	}
+				;132	
+				;133	/********************************************************************
+				;134	Function:	Key_Scan
+				;135	INPUT	:
+				;136	OUTPUT	:	
+				;137	NOTE	:   
+				;138	********************************************************************/
+				;139	void Uart_off(void)
+				;140	{
+				;141		_uren = 0;
+				;142		_uucr1 = 0;
+				;143		_uucr2 = 0;	
+				;144		_usime = 0;
+				;145	}
+				;146	
+				;147	
+				;148	/********************************************************************
+				;149	Function:	UART_ISR
+				;150	INPUT	:
+				;151	OUTPUT	:	
+				;152	NOTE	:   
+				;153	********************************************************************/
+				;154	//@------------uart--------------@
+				;155	
+				;156	void __attribute((interrupt(0X24)))  UART_ISR()
+				;157	{	
+				@UART_ISR_code .SECTION 'CODE'
+0024	4082	mov     r124, a
+0025	070B	mov     a, PBP
+0026	1F0B	clr     PBP
+0027	2828	jmp     _UART_ISR
+				_UART_ISR:
+				_UART_ISR:
+				@dummy36 .SECTION 'CODE'
+0028	4083	mov     r224, a
+0029	070A	mov     a, STATUS
+002A	40BA	mov     r324, a
+002B	0703	mov     a, MP1L
+002C	40BB	mov     r424, a
+002D	0704	mov     a, MP1H
+002E	40BC	mov     r524, a
+002F	0707	mov     a, TBLP
+0030	40BD	mov     r624, a
+0031	0709	mov     a, TBHP
+0032	40BE	mov     r724, a
+				;158		u8	lu8v_isr_temp0;
+				;159			//clear urf flag
+				;160		   	if(_uperr || _unf || _uferr || _uoerr)		// error found?
+0033	3FB4	sz      UPERR
+0034	283B	jmp     _L8
+0035	3F34	sz      UNF
+0036	283B	jmp     _L8
+0037	3EB4	sz      UFERR
+0038	283B	jmp     _L8
+0039	3A34	snz     UOERR
+003A	2840	jmp     _L9
+				;161		   	{
+				;162		   	   lu8v_isr_temp0 = _uusr;				//read USR to clear error flag 
+				_L8:
+003B	0734	mov     a, UUSR
+003C	4084	mov     ra24, a
+				;163		   	   lu8v_isr_temp0 =  _utxr_rxr;				//read USR to clear error flag 	   	       
+003D	0732	mov     a, SIMD
+003E	4084	mov     ra24, a
+003F	28D1	jmp     _L7
+				;164		   	}
+				;165		   	else									// no error found
+				;166		   	{
+				;167		   	   if(_urxif)							//RXR	data register has available	data
+				_L9:
+0040	3934	snz     URXIF
+0041	28C2	jmp     _L11
+				;168		   	   {	   	  
+				;169					for(lu8v_isr_temp0 = 0;lu8v_isr_temp0<4;lu8v_isr_temp0++)
+				;170					{
+				;171						array_uart_rxbuff[lu8v_isr_temp0] = array_uart_rxbuff[lu8v_isr_temp0+1];		
+0042	470F	mov     a, array_uart_rxbuff[1]
+0043	408E	mov     array_uart_rxbuff[0], a
+0044	4710	mov     a, array_uart_rxbuff[2]
+0045	408F	mov     array_uart_rxbuff[1], a
+0046	4711	mov     a, array_uart_rxbuff[3]
+0047	4090	mov     array_uart_rxbuff[2], a
+0048	4712	mov     a, array_uart_rxbuff[4]
+0049	4091	mov     array_uart_rxbuff[3], a
+				;172					}
+				;173			 		   array_uart_rxbuff[4] = _utxr_rxr; 
+004A	0732	mov     a, SIMD
+004B	4092	mov     array_uart_rxbuff[4], a
+				;174					if(array_uart_rxbuff[0]==0x55&&array_uart_rxbuff[4]==(u8)(array_uart_rxbuff[0]+array_uart_rxbuff[1]+array_uart_rxbuff[2]+array_uart_rxbuff[3]))
+004C	470E	mov     a, array_uart_rxbuff[0]
+004D	0A55	sub     a, 55H
+004E	390A	snz     Z
+004F	28C1	jmp     _L13
+0050	4711	mov     a, array_uart_rxbuff[3]
+0051	4310	add     a, array_uart_rxbuff[2]
+0052	4085	mov     rb24, a
+0053	470F	mov     a, array_uart_rxbuff[1]
+0054	430E	add     a, array_uart_rxbuff[0]
+0055	4084	mov     ra24, a
+0056	4705	mov     a, rb24
+0057	4384	addm    a, ra24
+0058	4712	mov     a, array_uart_rxbuff[4]
+0059	4204	sub     a, ra24
+005A	390A	snz     Z
+005B	28C1	jmp     _L13
+				;175					{
+				;176						gbv_rx_success = 1;
+005C	70A1	set     gu8v_uart_flag[0].1
+				;177						
+				;178						
+				;179						if(array_uart_rxbuff[2] == 0)
+005D	5090	sz      array_uart_rxbuff[2]
+005E	2861	jmp     _L15
+				;180						{
+				;181							SET_ADC_PGA_1();		
+005F	3569	clr     PGS2
+0060	2878	jmp     _L39
+				;182							
+				;183						}
+				;184						else if(array_uart_rxbuff[2] == 1)
+				_L15:
+0061	5710	sdza    array_uart_rxbuff[2]
+0062	2865	jmp     _L17
+				;185						{
+				;186							SET_ADC_PGA_2();				
+0063	3569	clr     PGS2
+0064	287F	jmp     _L40
+				;187						}
+				;188						else if(array_uart_rxbuff[2] == 2)
+				_L17:
+0065	4710	mov     a, array_uart_rxbuff[2]
+0066	0A02	sub     a, 2H
+0067	390A	snz     Z
+0068	286D	jmp     _L18
+				;189						{
+				;190							SET_ADC_PGA_4();	
+0069	3569	clr     PGS2
+				_L33:
+006A	30E9	set     PGS1
+				_L32:
+006B	3469	clr     PGS0
+006C	288E	jmp     _L16
+				;191						}					
+				;192						else if(array_uart_rxbuff[2] == 3)
+				_L18:
+006D	4710	mov     a, array_uart_rxbuff[2]
+006E	0A03	sub     a, 3H
+006F	390A	snz     Z
+0070	2873	jmp     _L19
+				;193						{
+				;194							SET_ADC_PGA_8();
+0071	3569	clr     PGS2
+0072	288C	jmp     _L35
+				;195						}
+				;196						else if(array_uart_rxbuff[2] == 4)
+				_L19:
+0073	4710	mov     a, array_uart_rxbuff[2]
+0074	0A04	sub     a, 4H
+0075	390A	snz     Z
+0076	287A	jmp     _L20
+				;197						{
+				;198							SET_ADC_PGA_16();
+0077	3169	set     PGS2
+				_L39:
+0078	34E9	clr     PGS1
+0079	286B	jmp     _L32
+				;199						}					
+				;200						else if(array_uart_rxbuff[2] == 5)
+				_L20:
+007A	4710	mov     a, array_uart_rxbuff[2]
+007B	0A05	sub     a, 5H
+007C	390A	snz     Z
+007D	2881	jmp     _L21
+				;201						{
+				;202							SET_ADC_PGA_32();
+007E	3169	set     PGS2
+				_L40:
+007F	34E9	clr     PGS1
+0080	288D	jmp     _L34
+				;203						}					
+				;204						else if(array_uart_rxbuff[2] == 6)
+				_L21:
+0081	4710	mov     a, array_uart_rxbuff[2]
+0082	0A06	sub     a, 6H
+0083	390A	snz     Z
+0084	2887	jmp     _L22
+				;205						{
+				;206							SET_ADC_PGA_64();
+0085	3169	set     PGS2
+0086	286A	jmp     _L33
+				;207						}					
+				;208						else if(array_uart_rxbuff[2] == 7)
+				_L22:
+0087	4710	mov     a, array_uart_rxbuff[2]
+0088	0A07	sub     a, 7H
+0089	390A	snz     Z
+008A	288E	jmp     _L16
+				;209						{
+				;210							SET_ADC_PGA_128();
+008B	3169	set     PGS2
+				_L35:
+008C	30E9	set     PGS1
+				_L34:
+008D	3069	set     PGS0
+				;211						}					
+				;212						
+				;213						
+				;214						if(array_uart_rxbuff[3] == 0)
+				_L16:
+008E	5091	sz      array_uart_rxbuff[3]
+008F	2896	jmp     _L23
+				;215						{
+				;216							SET_ADC_DATARATE_10HZ();		
+0090	1F65	clr     ADCS
+0091	37E7	clr     FLMS2
+0092	3367	set     FLMS1
+0093	36E7	clr     FLMS0
+0094	3666	clr     ADOR2
+0095	28BF	jmp     _L36
+				;217							
+				;218						}
+				;219						else if(array_uart_rxbuff[3] == 1)
+				_L23:
+0096	5711	sdza    array_uart_rxbuff[3]
+0097	289F	jmp     _L24
+				;220						{
+				;221							SET_ADC_DATARATE_20HZ();				
+0098	1F65	clr     ADCS
+0099	37E7	clr     FLMS2
+009A	3367	set     FLMS1
+009B	36E7	clr     FLMS0
+009C	3666	clr     ADOR2
+009D	35E6	clr     ADOR1
+009E	28B4	jmp     _L37
+				;222						}
+				;223						else if(array_uart_rxbuff[3] == 2)
+				_L24:
+009F	4711	mov     a, array_uart_rxbuff[3]
+00A0	0A02	sub     a, 2H
+00A1	390A	snz     Z
+00A2	28AA	jmp     _L25
+				;224						{
+				;225							SET_ADC_DATARATE_40HZ();	
+00A3	1F65	clr     ADCS
+00A4	37E7	clr     FLMS2
+00A5	3367	set     FLMS1
+00A6	36E7	clr     FLMS0
+00A7	3666	clr     ADOR2
+00A8	31E6	set     ADOR1
+00A9	28C0	jmp     _L38
+				;226						}					
+				;227						else if(array_uart_rxbuff[3] == 3)
+				_L25:
+00AA	4711	mov     a, array_uart_rxbuff[3]
+00AB	0A03	sub     a, 3H
+00AC	390A	snz     Z
+00AD	28B6	jmp     _L26
+				;228						{
+				;229							SET_ADC_DATARATE_80HZ();
+00AE	1F65	clr     ADCS
+00AF	37E7	clr     FLMS2
+00B0	3367	set     FLMS1
+00B1	36E7	clr     FLMS0
+00B2	3666	clr     ADOR2
+00B3	31E6	set     ADOR1
+				_L37:
+00B4	3166	set     ADOR0
+00B5	28C1	jmp     _L13
+				;230						}
+				;231						else if(array_uart_rxbuff[3] == 4)
+				_L26:
+00B6	4711	mov     a, array_uart_rxbuff[3]
+00B7	0A04	sub     a, 4H
+00B8	390A	snz     Z
+00B9	28C1	jmp     _L13
+				;232						{
+				;233							SET_ADC_DATARATE_160HZ();
+00BA	1F65	clr     ADCS
+00BB	37E7	clr     FLMS2
+00BC	3367	set     FLMS1
+00BD	36E7	clr     FLMS0
+00BE	3266	set     ADOR2
+				_L36:
+00BF	35E6	clr     ADOR1
+				_L38:
+00C0	3566	clr     ADOR0
+				;234						}						
+				;235						
+				;236						
+				;237						
+				;238					}	   	   	  
+				;239		   	   	  GCC_NOP();
+				_L13:
+00C1	0000	nop
+				;240		   	   }
+				;241		   	   if(_utxif)							//TXR	data register is empty
+				_L11:
+00C2	3834	snz     UTXIF
+00C3	28D1	jmp     _L7
+				;242		   	   {
+				;243		   	   		gu8v_tx_guide++; 	   		
+00C4	548D	inc     gu8v_tx_guide[0]
+				;244		   	   		if(gu8v_tx_guide<LU8C_TX_BUFF_LENGHT)			//
+00C5	0F05	mov     a, 5H
+00C6	420D	sub     a, gu8v_tx_guide[0]
+00C7	380A	snz     C
+00C8	28D1	jmp     _L7
+				;245		   	   		{
+				;246			   	   		_utxr_rxr= array_uart_txbuff[gu8v_tx_guide];	  	   	   			
+00C9	0F9A	mov     a, 9AH
+00CA	430D	add     a, gu8v_tx_guide[0]
+00CB	0083	mov     MP1L, a
+00CC	0F00	mov     a, 0H
+00CD	1F04	clr     MP1H
+00CE	1384	adcm    a, MP1H
+00CF	2006	call    L0006
+00D0	00B2	mov     SIMD, a
+				_L7:
+00D1	4703	mov     a, r224
+00D2	008B	mov     PBP, a
+00D3	473A	mov     a, r324
+00D4	008A	mov     STATUS, a
+00D5	473B	mov     a, r424
+00D6	0083	mov     MP1L, a
+00D7	473C	mov     a, r524
+00D8	0084	mov     MP1H, a
+00D9	473D	mov     a, r624
+00DA	0087	mov     TBLP, a
+00DB	473E	mov     a, r724
+00DC	0089	mov     TBHP, a
+00DD	1D05	tabrd   ACC
+00DE	4702	mov     a, r124
+00DF	0004	reti
+00E0	0000	nop
+00E1	0000	nop
+				;247		   	   		}
+				;248		   	   		else 
+				;249		   	   		{
+				;250						
+				;251		   	   		}
+				;252						
+				;253		   	   }
+				;254		   	}	
+				;255	}
+				;256	
+				;257	
+				;258	
+				;259	
+				;260	
+				;261	
+				;262	//-----------------------------------------------------END------------------------------------------------------//
+				;file D:\work_buff\IC喷靡\BH67F5260\SoftWare-BH67F5270_DEMOCODE_SIG\User\ADC.c
+				;1	//___________________________________________________________________
+				;2	//___________________________________________________________________
+				;3	//  Copyright : 2018 BY HOLTEK SEMICONDUCTOR INC
+				;4	//  File Name : ADC.c
+				;5	// Description: 
+				;6	//Targer Board: 
+				;7	//   MCU      : BH67F5270
+				;8	//   Author   : ming
+				;9	//   Date     : 2018/03/26
+				;10	//   Version  : V00
+				;11	//   History  :
+				;12	//___________________________________________________________________
+				;13	//___________________________________________________________________
+				;14	
+				;15	#include "common.h"
+				;16	
+				;17	volatile	u8  gu8v_Sample_Count ;
+				;18	volatile	s16	gs16v_adc_buff[10];	
+				;19	volatile	u8  gbv_adc_Sample_Mode;
+				;20	volatile	__byte_type  gbv_adc_flag;
+				;21	
+				;22	
+				;23	/********************************************************************
+				;24	Function:	fun_ADC_Enable
+				;25	INPUT	:
+				;26	OUTPUT	:	
+				;27	NOTE	:   
+				;28	********************************************************************/
+				;29	void fun_ADC_INIT()
+				;30	{
+				;31	
+				;32		SET_ADC_PGA_1();
+				_fun_ADC_INIT:
+				_fun_ADC_INIT:
+0175	3569	clr     PGS2
+0176	34E9	clr     PGS1
+0177	3469	clr     PGS0
+				;33		SET_ADC_CHSP_AN0();
+0178	35EB	clr     CHSP3
+0179	356B	clr     CHSP2
+017A	34EB	clr     CHSP1
+017B	346B	clr     CHSP0
+				;34		SET_ADC_CHSN_AN1();	
+017C	37EB	clr     CHSN3
+017D	376B	clr     CHSN2
+017E	36EB	clr     CHSN1
+017F	326B	set     CHSN0
+				;35		SET_ADC_DATARATE_10HZ();
+0180	1F65	clr     ADCS
+0181	37E7	clr     FLMS2
+0182	3367	set     FLMS1
+0183	36E7	clr     FLMS0
+0184	3666	clr     ADOR2
+0185	35E6	clr     ADOR1
+0186	3566	clr     ADOR0
+				;36		SET_LDO_EN2_4();
+0187	0F80	mov     a, 80H
+0188	00E8	mov     PWRC, a
+				;37		SET_DSOP_VCM();
+0189	0F0A	mov     a, AH
+018A	00F2	mov     DSOPC, a
+018B	0003	ret
+				;38	
+				;39			
+				;40	}
+				;41	
+				;42	
+				;43	/********************************************************************
+				;44	Function:	fun_ADC_Enable
+				;45	INPUT	:
+				;46	OUTPUT	:
+				;47	NOTE	:  
+				;48	********************************************************************/
+				;49	void fun_ADC_Power_Enable()
+				;50	{
+				;51	
+				;52	}
+				;53	
+				;54	/********************************************************************
+				;55	Function:	fun_ADC_Enable
+				;56	INPUT	:
+				;57	OUTPUT	:	
+				;58	NOTE	:   
+				;59	********************************************************************/
+				;60	void fun_ADC_Power_Disable()
+				;61	{
+				;62	
+				;63	}
+				;64	
+				;65	
+				;66	
+				;67	/********************************************************************
+				;68	Function:	fun_ADC_Enable
+				;69	INPUT	:
+				;70	OUTPUT	:	
+				;71	NOTE	:   
+				;72	********************************************************************/
+				;73	void fun_ADC_Enable()
+				;74	{
+				;75		gu8v_Sample_Count = 0;
+				_fun_ADC_Enable:
+				_fun_ADC_Enable:
+0168	5F0C	clr     gu8v_Sample_Count[0]
+				;76		gbv_adc_Sample_Mode = 0;
+0169	5F0B	clr     gbv_adc_Sample_Mode[0]
+				;77		gbv_adc_Sample_lock = 0;
+016A	740A	clr     gbv_adc_flag[0].0
+				;78		gbv_adc_success = 0;	
+016B	748A	clr     gbv_adc_flag[0].1
+				;79		SET_ADCPOWER_ON();
+016C	36E6	clr     ADOFF
+				;80		SET_ADCMODE_NORMAL();
+016D	3766	clr     ADSLP
+				;81		//如果是桥式电阻传感器选择和桥式电阻同一组电源
+				;82		//如果测试绝对电压选择VCM作为基准,注意AN+AN- 的电压输入范围
+				;83		SET_ADCVREF_VCMAVSS();
+016E	3466	clr     VREFS
+				;84		SET_ADC_STARTCONVERT();
+016F	37E6	clr     ADRST
+0170	33E6	set     ADRST
+0171	37E6	clr     ADRST
+0172	3567	clr     ADCDL
+0173	34E7	clr     EOC
+0174	0003	ret
+				;85	
+				;86	}
+				;87	
+				;88	/********************************************************************
+				;89	Function:	fun_ADC_Disable
+				;90	INPUT	:
+				;91	OUTPUT	:	
+				;92	NOTE	:   
+				;93	********************************************************************/
+				;94	void fun_ADC_Disable()
+				;95	{
+				;96		gu8v_Sample_Count = 0;
+				;97		gbv_adc_Sample_Mode = 0;
+				;98		gbv_adc_Sample_lock = 0;
+				;99		gbv_adc_success = 0;	
+				;100		SET_ADCPOWER_OFF();
+				;101		SET_ADCMODE_SLEEP();
+				;102		SET_LDO_DISABLE();
+				;103	}
+				;104	
+				;105	/********************************************************************
+				;106	Function:	fun_ADC_Polling
+				;107	INPUT	:
+				;108	OUTPUT	:	
+				;109	NOTE	:   獲取六筆數據，除去最大最小值求平均
+				;110	********************************************************************/
+				;111	void fun_filter_adc()
+				;112	{	
+				;113	
+				;114	
+				;115	}
+				;116	
+				;117	/********************************************************************
+				;118	Function:	fun_ADC_Polling
+				;119	INPUT	:
+				;120	OUTPUT	:	
+				;121	NOTE	:   
+				;122	********************************************************************/
+				;123	void fun_ADC_Polling()
+				;124	{
+				;125	
+				;126		if(_eoc!=0)
+				_fun_ADC_Polling:
+				_fun_ADC_Polling:
+010B	38E7	snz     EOC
+010C	2954	jmp     _L7
+				;127		{
+				;128			//鎖存數據
+				;129			_adcdl=1;
+010D	3167	set     ADCDL
+				;130			//將數據轉換為32bit 的有符號數據
+				;131			gu32v_adc_data.u32 = 0;
+010E	DF00	lclr    gu32v_adc_data[0]
+0110	DF01	lclr    gu32v_adc_data[1]
+0112	DF02	lclr    gu32v_adc_data[2]
+0114	DF03	lclr    gu32v_adc_data[3]
+				;132			gu32v_adc_data.byte.byte0	= _adrl;
+0116	076C	mov     a, ADRL
+0117	C080	lmov    gu32v_adc_data[0], a
+				;133			gu32v_adc_data.byte.byte1	= _adrm;				
+0119	076D	mov     a, ADRM
+011A	C081	lmov    gu32v_adc_data[1], a
+				;134			gu32v_adc_data.byte.byte2	= _adrh;
+011C	076E	mov     a, ADRH
+011D	C082	lmov    gu32v_adc_data[2], a
+				;135			if(gu32v_adc_data.bits.b23)
+011F	FB82	lsnz    [0282H].7
+0121	2924	jmp     _L10
+				;136			{
+				;137				gu32v_adc_data.byte.byte3 = 0xff;
+0122	DF83	lset    gu32v_adc_data[3]
+				;138			}
+				;139	
+				;140			_adcdl=0;
+				_L10:
+0124	3567	clr     ADCDL
+				;141			_eoc =0;
+0125	34E7	clr     EOC
+				;142			
+				;143			
+				;144			
+				;145		//需丟棄前三筆數據
+				;146			array_uart_txbuff[0] = 0x55;
+0126	0F55	mov     a, 55H
+0127	409A	mov     array_uart_txbuff[0], a
+				;147			array_uart_txbuff[1] = 0x00;			
+0128	5F1B	clr     array_uart_txbuff[1]
+				;148			array_uart_txbuff[2] = gu32v_adc_data.byte.byte0;			
+0129	C700	lmov    a, gu32v_adc_data[0]
+012B	409C	mov     array_uart_txbuff[2], a
+				;149			array_uart_txbuff[3] = gu32v_adc_data.byte.byte1;			
+012C	C701	lmov    a, gu32v_adc_data[1]
+012E	409D	mov     array_uart_txbuff[3], a
+				;150			array_uart_txbuff[4] = gu32v_adc_data.byte.byte2;						
+012F	C702	lmov    a, gu32v_adc_data[2]
+0131	409E	mov     array_uart_txbuff[4], a
+				;151			array_uart_txbuff[5] = array_uart_txbuff[0]+array_uart_txbuff[1]+array_uart_txbuff[2]+array_uart_txbuff[3]+array_uart_txbuff[4];						
+0132	471D	mov     a, array_uart_txbuff[3]
+0133	431C	add     a, array_uart_txbuff[2]
+0134	4081	mov     rb, a
+0135	471E	mov     a, array_uart_txbuff[4]
+0136	4381	addm    a, rb
+0137	471B	mov     a, array_uart_txbuff[1]
+0138	431A	add     a, array_uart_txbuff[0]
+0139	4080	mov     ra, a
+013A	4701	mov     a, rb
+013B	4300	add     a, ra
+013C	409F	mov     array_uart_txbuff[5], a
+				;152			gu8v_tx_guide = 0;
+013D	5F0D	clr     gu8v_tx_guide[0]
+				;153			_utxr_rxr = array_uart_txbuff[gu8v_tx_guide];		
+013E	0F9A	mov     a, 9AH
+013F	430D	add     a, gu8v_tx_guide[0]
+0140	0083	mov     MP1L, a
+0141	0F00	mov     a, 0H
+0142	1F04	clr     MP1H
+0143	1384	adcm    a, MP1H
+0144	2006	call    L0006
+0145	00B2	mov     SIMD, a
+				;154			
+				;155			//採樣計數
+				;156			gu8v_Sample_Count++;
+0146	548C	inc     gu8v_Sample_Count[0]
+				;157			if(gbv_adc_Sample_Mode==0)
+0147	508B	sz      gbv_adc_Sample_Mode[0]
+0148	2951	jmp     _L11
+				;158			{
+				;159				//丟棄前三筆數據
+				;160				if(gu8v_Sample_Count>3)
+0149	0F03	mov     a, 3H
+014A	420C	sub     a, gu8v_Sample_Count[0]
+014B	3C0A	sz      C
+014C	2954	jmp     _L7
+				;161				{
+				;162					gu8v_Sample_Count=0;
+014D	5F0C	clr     gu8v_Sample_Count[0]
+				;163					gbv_adc_Sample_Mode = 1;
+014E	0F01	mov     a, 1H
+014F	408B	mov     gbv_adc_Sample_Mode[0], a
+0150	2954	jmp     _L7
+				;164	
+				;165				}
+				;166			}
+				;167			else if(gbv_adc_Sample_Mode==1)
+				_L11:
+0151	570B	sdza    gbv_adc_Sample_Mode[0]
+0152	2954	jmp     _L7
+				;168			{	
+				;169				gbv_adc_success		= 1;
+0153	708A	set     gbv_adc_flag[0].1
+				_L7:
+0154	0003	ret
+				;170			}	 
+				;171		}		
+				;172	}
+				data .SECTION 'DATA'
+				__iar1 DB DUP (?) ; __iar1
+				__mp1l DB DUP (?) ; __mp1l
+				__mp1h DB DUP (?) ; __mp1h
+				__tblp DB DUP (?) ; __tblp
+				__status DB DUP (?) ; __status
+				__scc DB DUP (?) ; __scc
+				__hircc DB DUP (?) ; __hircc
+				__lxtc DB DUP (?) ; __lxtc
+				__pa DB DUP (?) ; __pa
+				__lvrc DB DUP (?) ; __lvrc
+				__mfi1 DB DUP (?) ; __mfi1
+				__wdtc DB DUP (?) ; __wdtc
+				__intc0 DB DUP (?) ; __intc0
+				__intc2 DB DUP (?) ; __intc2
+				__pb DB DUP (?) ; __pb
+				__pbc DB DUP (?) ; __pbc
+				__pbpu DB DUP (?) ; __pbpu
+				__simc0 DB DUP (?) ; __simc0
+				__uucr1 DB DUP (?) ; __uucr1
+				__uucr2 DB DUP (?) ; __uucr2
+				__utxr_rxr DB DUP (?) ; __utxr_rxr
+				__ubrg DB DUP (?) ; __ubrg
+				__uusr DB DUP (?) ; __uusr
+				__adcs DB DUP (?) ; __adcs
+				__adcr0 DB DUP (?) ; __adcr0
+				__adcr1 DB DUP (?) ; __adcr1
+				__pwrc DB DUP (?) ; __pwrc
+				__pgac0 DB DUP (?) ; __pgac0
+				__pgacs DB DUP (?) ; __pgacs
+				__adrl DB DUP (?) ; __adrl
+				__adrm DB DUP (?) ; __adrm
+				__adrh DB DUP (?) ; __adrh
+				__dsdacc DB DUP (?) ; __dsdacc
+				__dsopc DB DUP (?) ; __dsopc
+				ra DB DUP (?)
+				rb DB DUP (?)
+				r124 DB DUP (?)
+				r224 DB DUP (?)
+				ra24 DB DUP (?)
+				rb24 DB DUP (?)
+				_main_2 DB DUP (?)
+				gu8v_KeyUp DB DUP (?) ; gu8v_KeyUp
+				gu8v_KeyPress DB DUP (?) ; gu8v_KeyPress
+				gu8v_KeyCurrent DB DUP (?) ; gu8v_KeyCurrent
+				gbv_adc_flag DB DUP (?) ; gbv_adc_flag
+				gbv_adc_Sample_Mode DB DUP (?) ; gbv_adc_Sample_Mode
+				gu8v_Sample_Count DB DUP (?) ; gu8v_Sample_Count
+				gu8v_tx_guide DB DUP (?) ; gu8v_tx_guide
+				array_uart_rxbuff DB DUP (?) ; array_uart_rxbuff
+				gu8v_PGA DB DUP (?) ; gu8v_PGA
+				gu8v_KeyNoChangedTime DB DUP (?) ; gu8v_KeyNoChangedTime
+				gu8v_KeyLast DB DUP (?) ; gu8v_KeyLast
+				gu8v_KeyOld DB DUP (?) ; gu8v_KeyOld
+				gu8v_SPEED DB DUP (?) ; gu8v_SPEED
+				gu8v_KeyDown DB DUP (?) ; gu8v_KeyDown
+				array_uart_txbuff DB DUP (?) ; array_uart_txbuff
+				gu8v_halt_time DB DUP (?) ; gu8v_halt_time
+				gu8v_uart_flag DB DUP (?) ; gu8v_uart_flag
+				gu8v_Keypress_time DB DUP (?) ; gu8v_Keypress_time
+				gu8v_Key_status DB DUP (?) ; gu8v_Key_status
+				gu8v_KeyCanChange DB DUP (?) ; gu8v_KeyCanChange
+				gs16v_adc_buff DB DUP (?) ; gs16v_adc_buff
+				gu8v_rx_guide DB DUP (?) ; gu8v_rx_guide
+				r324 DB DUP (?)
+				r424 DB DUP (?)
+				r524 DB DUP (?)
+				r624 DB DUP (?)
+				r724 DB DUP (?)
+				__ptm2c0 DB DUP (?) ; __ptm2c0
+				__ptm2c1 DB DUP (?) ; __ptm2c1
+				__ptm2al DB DUP (?) ; __ptm2al
+				__ptm2ah DB DUP (?) ; __ptm2ah
+				__pas0 DB DUP (?) ; __pas0
+				__pcs1 DB DUP (?) ; __pcs1
+				gu32v_adc_data DB DUP (?) ; gu32v_adc_data
