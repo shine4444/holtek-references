@@ -31,7 +31,11 @@ void fun_ADC_INIT()
 
 	SET_ADC_PGA_1();
 	SET_ADC_CHSP_VCM();
-	SET_ADC_CHSN_VCM();		
+	SET_ADC_CHSN_VCM();
+	//SET_ADC_CHSP_AN8();
+	//SET_ADC_CHSN_AN9();
+	//SET_ADC_CHSP_AN2();
+	//SET_ADC_CHSN_AN3();
 	SET_ADC_DATARATE_10HZ();
 	SET_LDO_EN2_9();
 	SET_DSOP_VCM();
@@ -119,10 +123,10 @@ void fun_ADC_Polling()
 		
 	//–ËÅGóâ«∞»˝πPîµì˛
 		array_uart_txbuff[0] = 0x55;
-		array_uart_txbuff[1] = 0x00;			
-		array_uart_txbuff[2] = gu32v_adc_data.byte.byte0;			
+		array_uart_txbuff[1] = gu32v_adc_data.byte.byte3;			
+		array_uart_txbuff[2] = gu32v_adc_data.byte.byte2;			
 		array_uart_txbuff[3] = gu32v_adc_data.byte.byte1;			
-		array_uart_txbuff[4] = gu32v_adc_data.byte.byte2;						
+		array_uart_txbuff[4] = gu32v_adc_data.byte.byte0;						
 		array_uart_txbuff[5] = array_uart_txbuff[0]+array_uart_txbuff[1]+array_uart_txbuff[2]+array_uart_txbuff[3]+array_uart_txbuff[4];						
 		gu8v_tx_guide = 0;
 		_utxr_rxr = array_uart_txbuff[gu8v_tx_guide];		

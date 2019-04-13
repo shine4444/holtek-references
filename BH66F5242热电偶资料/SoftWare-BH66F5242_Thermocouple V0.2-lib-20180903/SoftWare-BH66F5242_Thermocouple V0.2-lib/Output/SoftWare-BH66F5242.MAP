@@ -1,0 +1,614 @@
+
+连接器　版本8.7.7.181224
+Input Object File: E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\Output\MAIN.OBJ
+Input Object File: E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\Output\EEPROM.OBJ
+Input Object File: E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\Output\ISR.OBJ
+Input Object File: E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\Output\KEY_SCAN.OBJ
+Input Object File: E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\Output\SYS_INIT.OBJ
+Input Object File: E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\Output\ADC.OBJ
+Input Object File: E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\Output\UART.OBJ
+Input Object File: E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\Output\WORK_MODE_POLLING.OBJ
+Input Object File: E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\Output\STARTUP1_L.OBJ
+
+Input Library File: C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V7.x\LIB\LIBHOLTEKGCC.LIB
+Input Library File: C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V7.x\LIB\v3_lmrsc.lib
+Input Library File: E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\CAL.lib
+
+
+     Bank    Start     End      Length     Class    AvgIns    Name
+     00h     0000h     0000h    0001h      CODE               @code (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\Output\MAIN.OBJ)
+     00h     0001h     0001h    0001h      CODE               @start (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\Output\MAIN.OBJ)
+     00h     0002h     0005h    0004h      CODE               _fun_Key_init (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\Output\KEY_SCAN.OBJ)
+     00h     0006h     0010h    000bh      CODE               _fun_ResetInit (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\Output\SYS_INIT.OBJ)
+     00h     0011h     0011h    0001h      CODE               _fun_PrepareToHalt (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\Output\SYS_INIT.OBJ)
+     00h     0012h     0016h    0005h      CODE               _fun_ADC_Disable (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\Output\ADC.OBJ)
+     00h     0017h     0017h    0001h      CODE               _fun_500ms_polling (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\Output\WORK_MODE_POLLING.OBJ)
+     00h     0018h     001bh    0004h      CODE               @UART_ISR_code (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\Output\UART.OBJ)
+     00h     001ch     0198h    017dh      CODE               @crom (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\CAL.lib)
+     00h     0199h     01e6h    004eh      CODE               _main (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\Output\MAIN.OBJ)
+     00h     01e7h     01fdh    0017h      CODE               _fun_Read_EEPROM (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\Output\EEPROM.OBJ)
+     00h     01feh     0214h    0017h      CODE               _fun_Write_EEPROM (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\Output\EEPROM.OBJ)
+     00h     0215h     0240h    002ch      CODE               _fun_Key_Scan (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\Output\KEY_SCAN.OBJ)
+     00h     0241h     0253h    0013h      CODE               _fun_RamInit (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\Output\SYS_INIT.OBJ)
+     00h     0254h     025fh    000ch      CODE               _fun_PowerOnInit (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\Output\SYS_INIT.OBJ)
+     00h     0260h     026ch    000dh      CODE               _fun_ADC_Enable (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\Output\ADC.OBJ)
+     00h     026dh     0286h    001ah      CODE               _fun_VTP_ZERO_INIT (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\Output\ADC.OBJ)
+     00h     0287h     02a2h    001ch      CODE               _fun_VTP_CH0_INIT (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\Output\ADC.OBJ)
+     00h     02a3h     02bch    001ah      CODE               _fun_TEMP1_INIT (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\Output\ADC.OBJ)
+     00h     02bdh     02d6h    001ah      CODE               _fun_TEMP2_INIT (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\Output\ADC.OBJ)
+     00h     02d7h     0303h    002dh      CODE               _fun_ADC_Polling (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\Output\ADC.OBJ)
+     00h     0304h     0313h    0010h      CODE               _Uart_Init (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\Output\UART.OBJ)
+     00h     0314h     038eh    007bh      CODE               _UART_ISR (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\Output\UART.OBJ)
+     00h     038fh     03aeh    0020h      CODE               _Uart_single_ack (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\Output\UART.OBJ)
+     00h     03afh     03dbh    002dh      CODE               _Uart_check_ack (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\Output\UART.OBJ)
+     00h     03dch     03fbh    0020h      CODE               _Uart_cal_ack (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\Output\UART.OBJ)
+     00h     03fch     041bh    0020h      CODE               _Uart_cal_templ_ack (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\Output\UART.OBJ)
+     00h     041ch     043bh    0020h      CODE               _Uart_cal_temph_ack (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\Output\UART.OBJ)
+     00h     043ch     0464h    0029h      CODE               _Uart_manage (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\Output\UART.OBJ)
+     00h     0465h     0474h    0010h      CODE               _Change_Mode (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\Output\WORK_MODE_POLLING.OBJ)
+     00h     0475h     0477h    0003h      CODE               _Sys_HALT (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\Output\WORK_MODE_POLLING.OBJ)
+     00h     0478h     0480h    0009h      CODE               _Sys_Normal (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\Output\WORK_MODE_POLLING.OBJ)
+     00h     0481h     04a2h    0022h      CODE               _sys_time (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\Output\WORK_MODE_POLLING.OBJ)
+     00h     04a3h     04a3h    0001h      CODE               _Sys_Power_On (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\Output\WORK_MODE_POLLING.OBJ)
+     00h     04a4h     0539h    0096h      CODE               _Sys_Calibration_Time (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\Output\WORK_MODE_POLLING.OBJ)
+     00h     053ah     055eh    0025h      CODE               _fun_CAL_REEPROM (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\Output\WORK_MODE_POLLING.OBJ)
+     00h     055fh     0580h    0022h      CODE               _Sys_Measure (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\Output\WORK_MODE_POLLING.OBJ)
+     00h     0581h     0600h    0080h      CODE               _fun_RNTC_Calculate (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\CAL.lib)
+     00h     0601h     06dch    00dch      CODE               _fun_Vsen_Calculate (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\CAL.lib)
+     00h     06ddh     07e1h    0105h      CODE               _fun_get_Vobj_25 (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\CAL.lib)
+     00h     07e2h     08e6h    0105h      CODE               _fun_Tobj_Calculate (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\CAL.lib)
+     00h     08e7h     0bb8h    02d2h      CODE               _fun_CORRECTION_Calculate (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\CAL.lib)
+     00h     0bb9h     0c16h    005eh      CODE               _fun_get_NTC (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\CAL.lib)
+     00h     0c17h     0c58h    0042h      CODE               _fun_get_VTP (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\CAL.lib)
+     00h     0c59h     0c77h    001fh      CODE               _builtin_holtek_mulsi3_isr00 (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V7.x\LIB\LIBHOLTEKGCC.LIB)
+     00h     0c78h     0c8ah    0013h      CODE               _builtin_holtek_mulhi3_isr00 (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V7.x\LIB\LIBHOLTEKGCC.LIB)
+     00h     0c8bh     0cebh    0061h      CODE               _builtin_holtek_divmodsi4_isr00 (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V7.x\LIB\LIBHOLTEKGCC.LIB)
+     00h     0cech     0d22h    0037h      CODE               _builtin_holtek_divmodhi4_isr00 (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V7.x\LIB\LIBHOLTEKGCC.LIB)
+     00h     0d23h     0d32h    0010h      CODE               _CROM2PROM (CROM2PROM)
+     00h     0080h     0080h    0001h      DATA     83        @data_ra (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V7.x\LIB\LIBHOLTEKGCC.LIB)
+     00h     0081h     0081h    0001h      DATA     116       @data_rb (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V7.x\LIB\LIBHOLTEKGCC.LIB)
+     00h     0082h     0082h    0001h      DATA     101       @data_rc (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V7.x\LIB\LIBHOLTEKGCC.LIB)
+     00h     0083h     0083h    0001h      DATA     125       @data_rd (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V7.x\LIB\LIBHOLTEKGCC.LIB)
+     00h     0084h     0084h    0001h      DATA     125       @data_re (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V7.x\LIB\LIBHOLTEKGCC.LIB)
+     00h     0085h     0085h    0001h      DATA     85        @data_rf (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V7.x\LIB\LIBHOLTEKGCC.LIB)
+     00h     0086h     0086h    0001h      DATA     91        @data_rg (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V7.x\LIB\LIBHOLTEKGCC.LIB)
+     00h     0087h     0087h    0001h      DATA     6         @data_rh (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V7.x\LIB\LIBHOLTEKGCC.LIB)
+     00h     0088h     0088h    0001h      DATA     2         @data_r118 (isr:ra~rh)
+     00h     0089h     0089h    0001h      DATA     2         @data_r218 (isr:ra~rh)
+     00h     008ah     008ah    0001h      DATA     9         @data_ra18 (isr:ra~rh)
+     00h     008bh     008bh    0001h      DATA     3         @data_rd18 (isr:ra~rh)
+     00h     008ch     008ch    0001h      DATA     5         @data_rb18 (isr:ra~rh)
+     00h     008dh     008dh    0001h      DATA     3         @data_rc18 (isr:ra~rh)
+     00h     008eh     008eh    0001h      DATA     2         @data_re18 (isr:ra~rh)
+     00h     00bbh     00bbh    0001h      DATA     23        @HCCINIT0_gu8v_sys_flag (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\Output\WORK_MODE_POLLING.OBJ)
+     00h     00bch     00bch    0001h      DATA     17        @HCCINIT0_gu8v_time_flag (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\Output\WORK_MODE_POLLING.OBJ)
+     00h     00bdh     00bdh    0001h      DATA     10        @HCCINIT0_gu8v_correction_mode (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\Output\WORK_MODE_POLLING.OBJ)
+     00h     00beh     00beh    0001h      DATA     10        @HCCINIT0_gu8v_work_mode (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\Output\WORK_MODE_POLLING.OBJ)
+     00h     00bfh     00bfh    0001h      DATA     9         @HCCINIT0_gbv_adc_flag (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\Output\ADC.OBJ)
+     00h     00c0h     00c0h    0001h      DATA     8         @HCCINIT0_gu8v_Key_status (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\Output\KEY_SCAN.OBJ)
+     00h     00c1h     00c1h    0001h      DATA     8         @HCCINIT0_gu8v_tx_guide (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\Output\UART.OBJ)
+     00h     00c2h     00c5h    0004h      DATA     7.25      @HCCINIT0_gu32v_adc_data (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\CAL.lib)
+     00h     00c6h     00c7h    0002h      DATA     7         @HCCINIT0_gu16v_correction_K1 (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\CAL.lib)
+     00h     00c8h     00c9h    0002h      DATA     7         @HCCINIT0_gu16v_correction_K2 (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\CAL.lib)
+     00h     00cah     00cah    0001h      DATA     6         @HCCINIT0_gu8v_halt_time (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\Output\MAIN.OBJ)
+     00h     00cbh     00cbh    0001h      DATA     6         @HCCINIT0_gu8v_tx_lenght (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\Output\UART.OBJ)
+     00h     00cch     00cch    0001h      DATA     5         @HCCINIT0_gu8v_KeyPress (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\Output\KEY_SCAN.OBJ)
+     00h     00cdh     00cdh    0001h      DATA     5         @HCCINIT0_gbv_adc_Sample_Mode (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\Output\ADC.OBJ)
+     00h     00ceh     00ceh    0001h      DATA     5         @HCCINIT0_gu8v_Sample_Count (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\Output\ADC.OBJ)
+     00h     00cfh     00cfh    0001h      DATA     5         @HCCINIT0_gu8v_public_count (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\Output\WORK_MODE_POLLING.OBJ)
+     00h     00d0h     00d0h    0001h      DATA     5         @HCCINIT0_gu8v_obj_temp_mode (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\CAL.lib)
+     00h     00d1h     00d1h    0001h      DATA     5         @HCCINIT0_gu8v_NTCMode (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\CAL.lib)
+     00h     00d2h     00d2h    0001h      DATA     4         @HCCINIT0_gu8v_KeyNoChangedTime (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\Output\KEY_SCAN.OBJ)
+     00h     00d3h     00d3h    0001h      DATA     4         @HCCINIT0_gu8v_KeyCurrent (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\Output\KEY_SCAN.OBJ)
+     00h     00d4h     00d4h    0001h      DATA     4         @HCCINIT0_gu8v_sys_time (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\Output\WORK_MODE_POLLING.OBJ)
+     00h     00d5h     00d8h    0004h      DATA     4         @HCCINIT0_gu16v_vtp (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\CAL.lib)
+     00h     00d9h     00dah    0002h      DATA     4         @HCCINIT0_gu16v_ntc_res (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\CAL.lib)
+     00h     00dbh     00dbh    0001h      DATA     3         @HCCINIT0_gu8v_KeyLast (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\Output\KEY_SCAN.OBJ)
+     00h     00dch     00dch    0001h      DATA     3         @HCCINIT0_gu8v_KeyUp (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\Output\KEY_SCAN.OBJ)
+     00h     00ddh     00ddh    0001h      DATA     3         @HCCINIT0_gu8v_KeyOld (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\Output\KEY_SCAN.OBJ)
+     00h     00deh     00deh    0001h      DATA     3         @HCCINIT0_gu8v_KeyDown (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\Output\KEY_SCAN.OBJ)
+     00h     00dfh     00dfh    0001h      DATA     3         @HCCINIT0_gu8v_uart_flag (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\Output\UART.OBJ)
+     00h     00e0h     00e1h    0002h      DATA     3         @HCCINIT0_gu16v_cal_temph (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\CAL.lib)
+     00h     00e2h     00e3h    0002h      DATA     3         @HCCINIT0_gu16v_cal_templ (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\CAL.lib)
+     00h     00e4h     00e5h    0002h      DATA     3         @HCCINIT0_gu16v_current_temp (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\CAL.lib)
+     00h     00e6h     00e9h    0004h      DATA     3         @HCCINIT0_gu16v_vtp_buff1 (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\CAL.lib)
+     00h     00eah     00fdh    0014h      DATA     2.25      @HCCINIT0_array_uart_txbuff (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\Output\UART.OBJ)
+     00h     00feh     00ffh    0002h      DATA     2         @HCCINIT0_gu16v_temp_temp (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\CAL.lib)
+     01h     0080h     0083h    0004h      DATA     2         @HCCINIT0_gu16v_adc_VtpZero (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\CAL.lib)
+     01h     0084h     0087h    0004h      DATA     2         @HCCINIT0_gu16v_vtp_buff2 (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\CAL.lib)
+     01h     0088h     0089h    0002h      DATA     2         @HCCINIT0_gu16v_adc_res2 (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\CAL.lib)
+     01h     008ah     008bh    0002h      DATA     2         @HCCINIT0_gu16v_adc_res1 (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\CAL.lib)
+     01h     008ch     0095h    000ah      DATA     1.5       @HCCINIT0_array_uart_rxbuff (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\Output\UART.OBJ)
+     01h     0096h     0096h    0001h      DATA     1         @HCCINIT0_gu8v_ntc_sample_mode (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\Output\WORK_MODE_POLLING.OBJ)
+     01h     0097h     0097h    0001h      DATA     1         @HCCINIT0_gu8v_public_count1 (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\Output\WORK_MODE_POLLING.OBJ)
+     01h     0098h     0098h    0001h      DATA     1         @HCCINIT0_gu8v_public_time (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\Output\WORK_MODE_POLLING.OBJ)
+     01h     0099h     00a0h    0008h      DATA     0.5       @HCCINIT0_gu16v_tp_temp (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\CAL.lib)
+     01h     00a1h     00a1h    0001h      DATA     0         @HCCINIT0_gu8v_Keypress_time (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\Output\KEY_SCAN.OBJ)
+     01h     00a2h     00a2h    0001h      DATA     0         @HCCINIT0_gu8v_KeyCanChange (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\Output\KEY_SCAN.OBJ)
+     01h     00a3h     00b6h    0014h      DATA     0         @HCCINIT0_gs16v_adc_buff (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\Output\ADC.OBJ)
+     01h     00b7h     00b7h    0001h      DATA     0         @HCCINIT0_gu8v_rx_guide (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\Output\UART.OBJ)
+     01h     00b8h     00b8h    0001h      DATA     0         @HCCINIT0_gu8v_lower_power_count (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\Output\WORK_MODE_POLLING.OBJ)
+     01h     00b9h     00b9h    0001h      DATA     0         @HCCINIT0_gu8v_tb1_count (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\Output\WORK_MODE_POLLING.OBJ)
+     01h     00bah     00bah    0001h      DATA     0         @HCCINIT0_gu8v_err_code (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\Output\WORK_MODE_POLLING.OBJ)
+     01h     00bbh     00beh    0004h      DATA     0         @HCCINIT0_gu32v_adc_sum (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\CAL.lib)
+     01h     00bfh     00c0h    0002h      DATA     0         @HCCINIT0_gu16v_adc_min (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\CAL.lib)
+     01h     00c1h     00c2h    0002h      DATA     0         @HCCINIT0_gu16v_adc_max (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\CAL.lib)
+     01h     00c3h     00c4h    0002h      DATA     0         @HCCINIT0_gu16v_body_temp (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\CAL.lib)
+     01h     00c5h     00c6h    0002h      DATA     0         @HCCINIT0_gu16v_temp (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\CAL.lib)
+     01h     00c7h     00c8h    0002h      DATA     0         @HCCINIT0_gu16v_adc_res (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\CAL.lib)
+     01h     00c9h     00d8h    0010h      DATA     0         @HCCINIT0_gu16v_adc_vtpL (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\CAL.lib)
+     01h     00d9h     00e8h    0010h      DATA     0         @HCCINIT0_gu16v_adc_vtp (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\CAL.lib)
+     01h     00e9h     00eah    0002h      DATA     0         @HCCINIT0_gu16v_std_res_adc (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\CAL.lib)
+     01h     00ebh     00ech    0002h      DATA     0         @HCCINIT0_gu16v_ntc_adc (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\CAL.lib)
+     01h     00edh     00edh    0001h      DATA     2         @data_r318 (isr:ra~rh)
+     01h     00eeh     00eeh    0001h      DATA     2         @data_r418 (isr:ra~rh)
+     01h     00efh     00efh    0001h      DATA     2         @data_r518 (isr:ra~rh)
+     01h     00f0h     00f0h    0001h      DATA     2         @data_r618 (isr:ra~rh)
+
+     Local Sections
+
+     Bank    Start     End      Length     Class    AvgIns    Name
+     00h     00bbh     00bbh    0000h      LOCAL    0         @dummy (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\Output\MAIN.OBJ)
+     00h     00bbh     00bbh    0000h      LOCAL    0         _main (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\Output\MAIN.OBJ)
+     00h     008fh     008fh    0000h      LOCAL    0         _fun_PowerOnInit (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\Output\SYS_INIT.OBJ)
+     00h     008fh     008fh    0000h      LOCAL    0         _fun_RamInit (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\Output\SYS_INIT.OBJ)
+     00h     008fh     008fh    0000h      LOCAL    0         _fun_ResetInit (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\Output\SYS_INIT.OBJ)
+     00h     008fh     008fh    0000h      LOCAL    0         _fun_Key_init (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\Output\KEY_SCAN.OBJ)
+     00h     008fh     008fh    0000h      LOCAL    0         _Uart_Init (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\Output\UART.OBJ)
+     00h     008fh     008fh    0001h      LOCAL    0         _Change_Mode (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\Output\WORK_MODE_POLLING.OBJ)
+     00h     008fh     008fh    0000h      LOCAL    0         _fun_500ms_polling (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\Output\WORK_MODE_POLLING.OBJ)
+     00h     008fh     008fh    0000h      LOCAL    0         _fun_ADC_Polling (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\Output\ADC.OBJ)
+     00h     0090h     0090h    0001h      LOCAL    4         _Uart_manage (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\Output\UART.OBJ)
+     00h     008fh     008fh    0000h      LOCAL    0         _Uart_cal_temph_ack (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\Output\UART.OBJ)
+     00h     008fh     008fh    0000h      LOCAL    0         _Crom2Prom (CROM2PROM)
+     00h     008fh     008fh    0000h      LOCAL    0         _Uart_single_ack (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\Output\UART.OBJ)
+     00h     008fh     008fh    0000h      LOCAL    0         _Uart_check_ack (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\Output\UART.OBJ)
+     00h     008fh     008fh    0000h      LOCAL    0         _Uart_cal_ack (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\Output\UART.OBJ)
+     00h     008fh     008fh    0000h      LOCAL    0         _Uart_cal_templ_ack (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\Output\UART.OBJ)
+     00h     008fh     008fh    0001h      LOCAL    4         _sys_time (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\Output\WORK_MODE_POLLING.OBJ)
+     00h     008fh     008fh    0000h      LOCAL    0         _fun_Key_Scan (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\Output\KEY_SCAN.OBJ)
+     00h     008fh     008fh    0000h      LOCAL    0         _Sys_HALT (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\Output\WORK_MODE_POLLING.OBJ)
+     00h     0090h     0090h    0000h      LOCAL    0         _Sys_Normal (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\Output\WORK_MODE_POLLING.OBJ)
+     00h     008fh     008fh    0000h      LOCAL    0         _Sys_Power_On (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\Output\WORK_MODE_POLLING.OBJ)
+     00h     00b6h     00b6h    0000h      LOCAL    0         _Sys_Measure (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\Output\WORK_MODE_POLLING.OBJ)
+     00h     008fh     008fh    0000h      LOCAL    0         _fun_get_NTC (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\CAL.lib)
+     00h     008fh     008fh    0000h      LOCAL    0         _fun_TEMP1_INIT (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\Output\ADC.OBJ)
+     00h     008fh     008fh    0000h      LOCAL    0         _fun_ADC_Enable (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\Output\ADC.OBJ)
+     00h     008fh     008fh    0000h      LOCAL    0         _fun_ADC_Disable (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\Output\ADC.OBJ)
+     00h     008fh     008fh    0000h      LOCAL    0         _fun_TEMP2_INIT (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\Output\ADC.OBJ)
+     00h     008fh     008fh    0000h      LOCAL    0         _fun_get_VTP (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\CAL.lib)
+     00h     008fh     008fh    0000h      LOCAL    0         _fun_VTP_ZERO_INIT (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\Output\ADC.OBJ)
+     00h     008fh     008fh    0000h      LOCAL    0         _fun_VTP_CH0_INIT (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\Output\ADC.OBJ)
+     00h     0090h     0090h    0000h      LOCAL    0         _fun_CAL_REEPROM (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\Output\WORK_MODE_POLLING.OBJ)
+     00h     008fh     008fh    0001h      LOCAL    2         _fun_Read_EEPROM (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\Output\EEPROM.OBJ)
+     00h     009dh     00a0h    0004h      LOCAL    2         _fun_RNTC_Calculate (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\CAL.lib)
+     00h     008fh     009ah    000ch      LOCAL    13.083    _builtin_holtek_mulsi3_isr00 (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V7.x\LIB\LIBHOLTEKGCC.LIB)
+     00h     008fh     009ch    000eh      LOCAL    15.071    _builtin_holtek_divmodsi4_isr00 (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V7.x\LIB\LIBHOLTEKGCC.LIB)
+     00h     009dh     00a4h    0008h      LOCAL    5.25      _fun_Vsen_Calculate (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\CAL.lib)
+     00h     008fh     0094h    0006h      LOCAL    5.1667    _builtin_holtek_mulhi3_isr00 (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V7.x\LIB\LIBHOLTEKGCC.LIB)
+     00h     00aah     00b5h    000ch      LOCAL    4         _fun_Tobj_Calculate (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\CAL.lib)
+     00h     008fh     0096h    0008h      LOCAL    12.5      _builtin_holtek_divmodhi4_isr00 (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V7.x\LIB\LIBHOLTEKGCC.LIB)
+     00h     009dh     00a9h    000dh      LOCAL    4.0769    _fun_get_Vobj_25 (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\CAL.lib)
+     00h     00bah     00bah    0001h      LOCAL    3         _Sys_Calibration_Time (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\Output\WORK_MODE_POLLING.OBJ)
+     00h     00aah     00b9h    0010h      LOCAL    5.9375    _fun_CORRECTION_Calculate (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\CAL.lib)
+     00h     008fh     0090h    0002h      LOCAL    5.5       _fun_Write_EEPROM (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\Output\EEPROM.OBJ)
+     00h     008fh     008fh    0000h      LOCAL    0         _fun_PrepareToHalt (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\Output\SYS_INIT.OBJ)
+     00h     008fh     008fh    0000h      LOCAL    0         @dummy24 (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\Output\UART.OBJ)
+     00h     008fh     008fh    0000h      LOCAL    0         _UART_ISR (E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\Output\UART.OBJ)
+
+     Public Symbols Information
+     Address            Public by Name
+     0465h              _Change_Mode
+     0d24h              _Crom2Prom
+     0d23h              _Crom2PromNext
+     0134h              _LU16C_NTC_TABLE
+     001ch              _LU16C_VTP_TABLE
+     04a4h              _Sys_Calibration_Time
+     0475h              _Sys_HALT
+     055fh              _Sys_Measure
+     0478h              _Sys_Normal
+     04a3h              _Sys_Power_On
+     0314h              _UART_ISR
+     0304h              _Uart_Init
+     03dch              _Uart_cal_ack
+     041ch              _Uart_cal_temph_ack
+     03fch              _Uart_cal_templ_ack
+     03afh              _Uart_check_ack
+     043ch              _Uart_manage
+     038fh              _Uart_single_ack
+     018ch              _array_uart_rxbuff
+     00eah              _array_uart_txbuff
+     0cech              _builtin_holtek_divmodhi4_isr00
+     0c8bh              _builtin_holtek_divmodsi4_isr00
+     0c78h              _builtin_holtek_mulhi3_isr00
+     0c59h              _builtin_holtek_mulsi3_isr00
+     0091h              _builtin_holtek_mulsi3_isr00_2
+     0cf5h              _builtin_holtek_udivmodhi4_isr00
+     0c9ah              _builtin_holtek_udivmodsi4_isr00
+     009bh              _builtin_holtek_udivmodsi4_isr00_2
+     0017h              _fun_500ms_polling
+     0012h              _fun_ADC_Disable
+     0260h              _fun_ADC_Enable
+     02d7h              _fun_ADC_Polling
+     053ah              _fun_CAL_REEPROM
+     08e7h              _fun_CORRECTION_Calculate
+     0215h              _fun_Key_Scan
+     0002h              _fun_Key_init
+     0254h              _fun_PowerOnInit
+     0011h              _fun_PrepareToHalt
+     0581h              _fun_RNTC_Calculate
+     0241h              _fun_RamInit
+     01e7h              _fun_Read_EEPROM
+     0006h              _fun_ResetInit
+     02a3h              _fun_TEMP1_INIT
+     02bdh              _fun_TEMP2_INIT
+     07e2h              _fun_Tobj_Calculate
+     0287h              _fun_VTP_CH0_INIT
+     026dh              _fun_VTP_ZERO_INIT
+     0601h              _fun_Vsen_Calculate
+     00a1h              _fun_Vsen_Calculate_2
+     01feh              _fun_Write_EEPROM
+     0090h              _fun_Write_EEPROM_2
+     0bb9h              _fun_get_NTC
+     0c17h              _fun_get_VTP
+     06ddh              _fun_get_Vobj_25
+     00a5h              _fun_get_Vobj_25_2
+     00cdh              _gbv_adc_Sample_Mode
+     00bfh              _gbv_adc_flag
+     01a3h              _gs16v_adc_buff
+     0180h              _gu16v_adc_VtpZero
+     01c1h              _gu16v_adc_max
+     01bfh              _gu16v_adc_min
+     01c7h              _gu16v_adc_res
+     018ah              _gu16v_adc_res1
+     0188h              _gu16v_adc_res2
+     01d9h              _gu16v_adc_vtp
+     01c9h              _gu16v_adc_vtpL
+     01c3h              _gu16v_body_temp
+     00e0h              _gu16v_cal_temph
+     00e2h              _gu16v_cal_templ
+     00c6h              _gu16v_correction_K1
+     00c8h              _gu16v_correction_K2
+     00e4h              _gu16v_current_temp
+     01ebh              _gu16v_ntc_adc
+     00d9h              _gu16v_ntc_res
+     01e9h              _gu16v_std_res_adc
+     01c5h              _gu16v_temp
+     00feh              _gu16v_temp_temp
+     0199h              _gu16v_tp_temp
+     00d5h              _gu16v_vtp
+     00e6h              _gu16v_vtp_buff1
+     0184h              _gu16v_vtp_buff2
+     00c2h              _gu32v_adc_data
+     01bbh              _gu32v_adc_sum
+     01a2h              _gu8v_KeyCanChange
+     00d3h              _gu8v_KeyCurrent
+     00deh              _gu8v_KeyDown
+     00dbh              _gu8v_KeyLast
+     00d2h              _gu8v_KeyNoChangedTime
+     00ddh              _gu8v_KeyOld
+     00cch              _gu8v_KeyPress
+     00dch              _gu8v_KeyUp
+     00c0h              _gu8v_Key_status
+     01a1h              _gu8v_Keypress_time
+     00d1h              _gu8v_NTCMode
+     00ceh              _gu8v_Sample_Count
+     00bdh              _gu8v_correction_mode
+     01bah              _gu8v_err_code
+     00cah              _gu8v_halt_time
+     01b8h              _gu8v_lower_power_count
+     0196h              _gu8v_ntc_sample_mode
+     00d0h              _gu8v_obj_temp_mode
+     00cfh              _gu8v_public_count
+     0197h              _gu8v_public_count1
+     0198h              _gu8v_public_time
+     01b7h              _gu8v_rx_guide
+     00bbh              _gu8v_sys_flag
+     00d4h              _gu8v_sys_time
+     01b9h              _gu8v_tb1_count
+     00bch              _gu8v_time_flag
+     00c1h              _gu8v_tx_guide
+     00cbh              _gu8v_tx_lenght
+     00dfh              _gu8v_uart_flag
+     00beh              _gu8v_work_mode
+     0199h              _main
+     0481h              _sys_time
+     0088h              r118
+     0089h              r218
+     01edh              r318
+     01eeh              r418
+     01efh              r518
+     01f0h              r618
+     0080h              ra
+     008ah              ra18
+     0081h              rb
+     008ch              rb18
+     0082h              rc
+     008dh              rc18
+     0083h              rd
+     008bh              rd18
+     0084h              re
+     008eh              re18
+     0085h              rf
+     0086h              rg
+     0087h              rh
+
+     Address            Public by Value
+     0002h              _fun_Key_init
+     0006h              _fun_ResetInit
+     0011h              _fun_PrepareToHalt
+     0012h              _fun_ADC_Disable
+     0017h              _fun_500ms_polling
+     001ch              _LU16C_VTP_TABLE
+     0080h              ra
+     0081h              rb
+     0082h              rc
+     0083h              rd
+     0084h              re
+     0085h              rf
+     0086h              rg
+     0087h              rh
+     0088h              r118
+     0089h              r218
+     008ah              ra18
+     008bh              rd18
+     008ch              rb18
+     008dh              rc18
+     008eh              re18
+     0090h              _fun_Write_EEPROM_2
+     0091h              _builtin_holtek_mulsi3_isr00_2
+     009bh              _builtin_holtek_udivmodsi4_isr00_2
+     00a1h              _fun_Vsen_Calculate_2
+     00a5h              _fun_get_Vobj_25_2
+     00bbh              _gu8v_sys_flag
+     00bch              _gu8v_time_flag
+     00bdh              _gu8v_correction_mode
+     00beh              _gu8v_work_mode
+     00bfh              _gbv_adc_flag
+     00c0h              _gu8v_Key_status
+     00c1h              _gu8v_tx_guide
+     00c2h              _gu32v_adc_data
+     00c6h              _gu16v_correction_K1
+     00c8h              _gu16v_correction_K2
+     00cah              _gu8v_halt_time
+     00cbh              _gu8v_tx_lenght
+     00cch              _gu8v_KeyPress
+     00cdh              _gbv_adc_Sample_Mode
+     00ceh              _gu8v_Sample_Count
+     00cfh              _gu8v_public_count
+     00d0h              _gu8v_obj_temp_mode
+     00d1h              _gu8v_NTCMode
+     00d2h              _gu8v_KeyNoChangedTime
+     00d3h              _gu8v_KeyCurrent
+     00d4h              _gu8v_sys_time
+     00d5h              _gu16v_vtp
+     00d9h              _gu16v_ntc_res
+     00dbh              _gu8v_KeyLast
+     00dch              _gu8v_KeyUp
+     00ddh              _gu8v_KeyOld
+     00deh              _gu8v_KeyDown
+     00dfh              _gu8v_uart_flag
+     00e0h              _gu16v_cal_temph
+     00e2h              _gu16v_cal_templ
+     00e4h              _gu16v_current_temp
+     00e6h              _gu16v_vtp_buff1
+     00eah              _array_uart_txbuff
+     00feh              _gu16v_temp_temp
+     0134h              _LU16C_NTC_TABLE
+     0180h              _gu16v_adc_VtpZero
+     0184h              _gu16v_vtp_buff2
+     0188h              _gu16v_adc_res2
+     018ah              _gu16v_adc_res1
+     018ch              _array_uart_rxbuff
+     0196h              _gu8v_ntc_sample_mode
+     0197h              _gu8v_public_count1
+     0198h              _gu8v_public_time
+     0199h              _main
+     0199h              _gu16v_tp_temp
+     01a1h              _gu8v_Keypress_time
+     01a2h              _gu8v_KeyCanChange
+     01a3h              _gs16v_adc_buff
+     01b7h              _gu8v_rx_guide
+     01b8h              _gu8v_lower_power_count
+     01b9h              _gu8v_tb1_count
+     01bah              _gu8v_err_code
+     01bbh              _gu32v_adc_sum
+     01bfh              _gu16v_adc_min
+     01c1h              _gu16v_adc_max
+     01c3h              _gu16v_body_temp
+     01c5h              _gu16v_temp
+     01c7h              _gu16v_adc_res
+     01c9h              _gu16v_adc_vtpL
+     01d9h              _gu16v_adc_vtp
+     01e7h              _fun_Read_EEPROM
+     01e9h              _gu16v_std_res_adc
+     01ebh              _gu16v_ntc_adc
+     01edh              r318
+     01eeh              r418
+     01efh              r518
+     01f0h              r618
+     01feh              _fun_Write_EEPROM
+     0215h              _fun_Key_Scan
+     0241h              _fun_RamInit
+     0254h              _fun_PowerOnInit
+     0260h              _fun_ADC_Enable
+     026dh              _fun_VTP_ZERO_INIT
+     0287h              _fun_VTP_CH0_INIT
+     02a3h              _fun_TEMP1_INIT
+     02bdh              _fun_TEMP2_INIT
+     02d7h              _fun_ADC_Polling
+     0304h              _Uart_Init
+     0314h              _UART_ISR
+     038fh              _Uart_single_ack
+     03afh              _Uart_check_ack
+     03dch              _Uart_cal_ack
+     03fch              _Uart_cal_templ_ack
+     041ch              _Uart_cal_temph_ack
+     043ch              _Uart_manage
+     0465h              _Change_Mode
+     0475h              _Sys_HALT
+     0478h              _Sys_Normal
+     0481h              _sys_time
+     04a3h              _Sys_Power_On
+     04a4h              _Sys_Calibration_Time
+     053ah              _fun_CAL_REEPROM
+     055fh              _Sys_Measure
+     0581h              _fun_RNTC_Calculate
+     0601h              _fun_Vsen_Calculate
+     06ddh              _fun_get_Vobj_25
+     07e2h              _fun_Tobj_Calculate
+     08e7h              _fun_CORRECTION_Calculate
+     0bb9h              _fun_get_NTC
+     0c17h              _fun_get_VTP
+     0c59h              _builtin_holtek_mulsi3_isr00
+     0c78h              _builtin_holtek_mulhi3_isr00
+     0c8bh              _builtin_holtek_divmodsi4_isr00
+     0c9ah              _builtin_holtek_udivmodsi4_isr00
+     0cech              _builtin_holtek_divmodhi4_isr00
+     0cf5h              _builtin_holtek_udivmodhi4_isr00
+     0d23h              _Crom2PromNext
+     0d24h              _Crom2Prom
+
+
+ROM Usage Statistics
+     Size      Used     Percentage
+     1000h     0d33h    82%
+
+RAM Usage Statistics
+    Bank      Size      Used     Percentage
+     00h       0080h     0080h    100%
+     01h       0080h     0071h    88%
+     Total     0100h     00f1h    94%
+
+Use Stack Count
+_main: 4
+_fun_VTP_CH1_INIT: 1
+_fun_VTP_CH2_INIT: 1
+_fun_VTP_CH3_INIT: 1
+_UART_ISR: 1
+_fun_CAL_WEEPROM: 1
+
+Call Tree
+    @dummy
+        _main (0)
+            _fun_PowerOnInit (1)
+                _fun_RamInit (2)
+                _fun_ResetInit (2)
+                    _fun_Key_init (3)
+                    _Uart_Init (3)
+            _Change_Mode (1)
+            _fun_ResetInit (1)
+                _fun_Key_init (2)
+                _Uart_Init (2)
+            _fun_500ms_polling (1)
+            _fun_ADC_Polling (1)
+            _Uart_manage (1)
+                _Uart_cal_temph_ack (2)
+                    _Crom2Prom (3)
+                _Uart_single_ack (2)
+                    _Crom2Prom (3)
+                _Uart_check_ack (2)
+                    _Crom2Prom (3)
+                _Uart_cal_ack (2)
+                    _Crom2Prom (3)
+                _Change_Mode (2)
+                _Uart_cal_templ_ack (2)
+                    _Crom2Prom (3)
+            _sys_time (1)
+            _fun_Key_Scan (1)
+            _Sys_HALT (1)
+            _Sys_Normal (1)
+                _Change_Mode (2)
+            _Sys_Power_On (1)
+            _Sys_Measure (1)
+                _fun_get_NTC (2)
+                    _fun_TEMP1_INIT (3)
+                        _fun_ADC_Enable (4)
+                    _fun_ADC_Disable (3)
+                    _fun_TEMP2_INIT (3)
+                        _fun_ADC_Enable (4)
+                _fun_get_VTP (2)
+                    _fun_VTP_ZERO_INIT (3)
+                        _fun_ADC_Enable (4)
+                    _fun_ADC_Disable (3)
+                    _fun_VTP_CH0_INIT (3)
+                        _fun_ADC_Enable (4)
+                _fun_CAL_REEPROM (2)
+                    _fun_Read_EEPROM (3)
+                _fun_RNTC_Calculate (2)
+                    _builtin_holtek_mulsi3_isr00 (3)
+                    _builtin_holtek_divmodsi4_isr00 (3)
+                _fun_Vsen_Calculate (2)
+                    _Crom2Prom (3)
+                    _Crom2Prom (3)
+                    _builtin_holtek_mulsi3_isr00 (3)
+                    _builtin_holtek_divmodsi4_isr00 (3)
+                    _builtin_holtek_mulhi3_isr00 (3)
+                _fun_Tobj_Calculate (2)
+                    _builtin_holtek_divmodhi4_isr00 (3)
+                    _Crom2Prom (3)
+                    _Crom2Prom (3)
+                    _builtin_holtek_mulsi3_isr00 (3)
+                    _builtin_holtek_divmodsi4_isr00 (3)
+                    _fun_get_Vobj_25 (3)
+                        _Crom2Prom (4)
+                        _Crom2Prom (4)
+                        _builtin_holtek_mulsi3_isr00 (4)
+                        _builtin_holtek_divmodsi4_isr00 (4)
+                        _builtin_holtek_mulhi3_isr00 (4)
+                _Change_Mode (2)
+            _Sys_Calibration_Time (1)
+                _fun_RNTC_Calculate (2)
+                    _builtin_holtek_mulsi3_isr00 (3)
+                    _builtin_holtek_divmodsi4_isr00 (3)
+                _fun_Vsen_Calculate (2)
+                    _Crom2Prom (3)
+                    _Crom2Prom (3)
+                    _builtin_holtek_mulsi3_isr00 (3)
+                    _builtin_holtek_divmodsi4_isr00 (3)
+                    _builtin_holtek_mulhi3_isr00 (3)
+                _fun_CORRECTION_Calculate (2)
+                    _builtin_holtek_divmodhi4_isr00 (3)
+                    _Crom2Prom (3)
+                    _Crom2Prom (3)
+                    _builtin_holtek_mulsi3_isr00 (3)
+                    _builtin_holtek_divmodsi4_isr00 (3)
+                    _fun_get_Vobj_25 (3)
+                        _Crom2Prom (4)
+                        _Crom2Prom (4)
+                        _builtin_holtek_mulsi3_isr00 (4)
+                        _builtin_holtek_divmodsi4_isr00 (4)
+                        _builtin_holtek_mulhi3_isr00 (4)
+                    _builtin_holtek_divmodhi4_isr00 (3)
+                    _builtin_holtek_mulhi3_isr00 (3)
+                    _builtin_holtek_divmodsi4_isr00 (3)
+                _fun_Write_EEPROM (2)
+                _Change_Mode (2)
+                _fun_get_NTC (2)
+                    _fun_TEMP1_INIT (3)
+                        _fun_ADC_Enable (4)
+                    _fun_ADC_Disable (3)
+                    _fun_TEMP2_INIT (3)
+                        _fun_ADC_Enable (4)
+                _fun_get_VTP (2)
+                    _fun_VTP_ZERO_INIT (3)
+                        _fun_ADC_Enable (4)
+                    _fun_ADC_Disable (3)
+                    _fun_VTP_CH0_INIT (3)
+                        _fun_ADC_Enable (4)
+            _fun_PrepareToHalt (1)
+    _fun_VTP_CH1_INIT
+        _fun_ADC_Enable (0)
+    _fun_VTP_CH2_INIT
+        _fun_ADC_Enable (0)
+    _fun_VTP_CH3_INIT
+        _fun_ADC_Enable (0)
+    @dummy24
+        _UART_ISR (0)
+            _Crom2Prom (1)
+    _fun_CAL_WEEPROM
+        _fun_Write_EEPROM (0)
+
+HLINK : 程序的开始执行点在程序段'@code'（地址0）。定义在'E:\旧电脑资料\收集的资料\手册\合泰\BH66F5242热电偶资料\SoftWare-BH66F5242_Thermocouple V0.2-lib-20180903\SoftWare-BH66F5242_Thermocouple V0.2-lib\Output\MAIN.OBJ' 文件中
+
+错误总数 : 0  警告总数 : 0

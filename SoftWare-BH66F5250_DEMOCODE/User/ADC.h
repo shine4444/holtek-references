@@ -32,6 +32,7 @@ void 	fun_ADC_Enable();
 void 	fun_ADC_Disable();
 void 	fun_ADC_Power_Enable();
 void 	fun_ADC_Power_Disable();
+void fun_ADC_INIT();
 
 
 

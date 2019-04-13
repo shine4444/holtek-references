@@ -46,7 +46,7 @@ void main()
 		//清除看門狗
 		GCC_CLRWDT();
 		//用於計時
-		fun_ADC_Polling();
+		
 		//判斷是否要進入睡眠
 		if(gu8v_halt_time<LU8C_HALT_TIME)
 		{
@@ -58,51 +58,49 @@ void main()
 				fun_Key_Scan();	
 				//
 				//fun_work_polling();
-				if(gbv_start_up)
+				
+
+				gu8v_PGA++;
+				if(gu8v_PGA>=8)
 				{
-					gbv_start_up = 0;
-					GCC_NOP();
-					gu8v_PGA++;
-					if(gu8v_PGA>=8)
-					{
-						gu8v_PGA = 0;
-						
-					}
-					if(gu8v_PGA == 0)
-					{
-						SET_ADC_PGA_1();		
-						
-					}
-					else if(gu8v_PGA == 1)
-					{
-						SET_ADC_PGA_2();				
-					}
-					else if(gu8v_PGA == 2)
-					{
-						SET_ADC_PGA_4();	
-					}					
-					else if(gu8v_PGA == 3)
-					{
-						SET_ADC_PGA_8();
-					}
-					else if(gu8v_PGA == 4)
-					{
-						SET_ADC_PGA_16();
-					}					
-					else if(gu8v_PGA == 5)
-					{
-						SET_ADC_PGA_32();
-					}					
-					else if(gu8v_PGA == 6)
-					{
-						SET_ADC_PGA_64();
-					}					
-					else if(gu8v_PGA == 7)
-					{
-						SET_ADC_PGA_128();
-					}										
-					
+					gu8v_PGA = 0;
+					fun_ADC_Polling();
 				}
+//				if(gu8v_PGA == 0)
+//				{
+//					SET_ADC_PGA_1();		
+//					
+//				}
+//				else if(gu8v_PGA == 1)
+//				{
+//					SET_ADC_PGA_2();				
+//				}
+//				else if(gu8v_PGA == 2)
+//				{
+//					SET_ADC_PGA_4();	
+//				}					
+//				else if(gu8v_PGA == 3)
+//				{
+//					SET_ADC_PGA_8();
+//				}
+//				else if(gu8v_PGA == 4)
+//				{
+//					SET_ADC_PGA_16();
+//				}					
+//				else if(gu8v_PGA == 5)
+//				{
+//					SET_ADC_PGA_32();
+//				}					
+//				else if(gu8v_PGA == 6)
+//				{
+//					SET_ADC_PGA_64();
+//				}					
+//				else if(gu8v_PGA == 7)
+//				{
+//					SET_ADC_PGA_128();
+//				}										
+					
+				
 				
 				
 				if(gbv_set_up)

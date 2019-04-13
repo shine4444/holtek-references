@@ -1,0 +1,4 @@
+---- SET_ADC_VGA_1_ Matches (3 in 1 files) ----
+ADC.h (User) line 157 : #define SET_ADC_VGA_1_1()		    { _vgs1 = 0; _vgs0 = 0; }
+ADC.h (User) line 158 : #define SET_ADC_VGA_1_2()		    { _vgs1 = 0; _vgs0 = 1; }
+ADC.h (User) line 159 : #define SET_ADC_VGA_1_4()		    { _vgs1 = 1; _vgs0 = 0; }

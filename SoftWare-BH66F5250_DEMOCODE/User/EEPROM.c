@@ -40,6 +40,7 @@ unsigned char fun_Read_EEPROM(unsigned char addr)
 ////	_bp = tmp_bp;
 //	_emi = tm_emi;
 //	return (rdata);
+return 0;
 }
 
 /********************************************************************

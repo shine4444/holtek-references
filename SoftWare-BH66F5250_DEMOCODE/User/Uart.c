@@ -112,25 +112,37 @@ NOTE	:
 ********************************************************************/
 void Uart_Init(void)
 {
-	_umd = 1;
-//	_pds0 = 0b10100000;//set tx rx pin
-	
-	_pbs07 = 1;
-	_pbs06 = 1;
-	_pas17 = 1;
-	_pas16 = 1;
-	
-	_rxps = 0;
+//	_umd = 1;
+////	_pds0 = 0b10100000;//set tx rx pin
+//	
+//	_pbs07 = 1;
+//	_pbs06 = 1;
+//	_pas17 = 1;
+//	_pas16 = 1;
+//	
+//	_rxps = 0;
+//
+//    _uucr1 = UCR1_8_N_1;     //enable UART function,8bits-Data  NONE-Parity 1bit-Stop Format
+//    _uucr2 = UCR2Data1;       //enable TXEN,RXEN,Hige Speed Baud Rate, Receiver interrupt enable 
+//	_urie = 1;
+//
+//   	_ubrg = 12;      	   //19200 Baud Rate	
+//
+////	_euti = 1;      			//UART interrupt enable
+//	_usime = 1;      			//UART interrupt enable	
+//	_emi = 1;
 
-    _uucr1 = UCR1_8_N_1;     //enable UART function,8bits-Data  NONE-Parity 1bit-Stop Format
-    _uucr2 = UCR2Data1;       //enable TXEN,RXEN,Hige Speed Baud Rate, Receiver interrupt enable 
+	
+	_pcs1=0x0a;	 //uart io
+	_rxps = 1;
+	
+	_umd = 1;	
+    _uucr1 = 0x80;     //enable UART function,8bits-Data  NONE-Parity 1bit-Stop Format
+    _uucr2 = 0xcf;       //enable TXEN,RXEN,Hige Speed Baud Rate, Receiver interrupt enable 
 	_urie = 1;
-
-   	_ubrg = 12;      	   //19200 Baud Rate	
-
-//	_euti = 1;      			//UART interrupt enable
-	_usime = 1;      			//UART interrupt enable	
-	_emi = 1;
+   	_ubrg = 38;// 4800 
+	_usime = 1; 
+	_emi=1;
 }
 
 /********************************************************************

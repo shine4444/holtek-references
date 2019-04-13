@@ -1,0 +1,142 @@
+
+连接器　版本8.7.7.181224
+Input Object File: E:\旧电脑资料\收集的资料\手册\合泰\BS86D20A_20150319_LIBV413--V3\20150319_LIBV413\OUTPUT\MAIN_PROGRAM_V102.OBJ
+Input Object File: C:\Users\ADMINI~1\AppData\Local\Temp\BS86D20A_LIBV413.OBJ
+Input Object File: E:\旧电脑资料\收集的资料\手册\合泰\BS86D20A_20150319_LIBV413--V3\20150319_LIBV413\OUTPUT\USER_PROGRAM.OBJ
+Input Object File: E:\旧电脑资料\收集的资料\手册\合泰\BS86D20A_20150319_LIBV413--V3\20150319_LIBV413\OUTPUT\STARTUP1_L.OBJ
+
+Input Library File: C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V7.x\LIB\LIBHOLTEKGCC.LIB
+Input Library File: C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V7.x\LIB\v3_lmrsc.lib
+
+
+     Bank    Start     End      Length     Class    AvgIns    Name
+     00h     0000h     0003h    0004h      CODE               PROGRAM_ENTRY (E:\旧电脑资料\收集的资料\手册\合泰\BS86D20A_20150319_LIBV413--V3\20150319_LIBV413\OUTPUT\MAIN_PROGRAM_V102.OBJ)
+     00h     0004h     0007h    0004h      CODE               @Interrupt_Extemal_code (E:\旧电脑资料\收集的资料\手册\合泰\BS86D20A_20150319_LIBV413--V3\20150319_LIBV413\OUTPUT\USER_PROGRAM.OBJ)
+     00h     0008h     0008h    0001h      CODE               TOUCH_INT (C:\Users\ADMINI~1\AppData\Local\Temp\BS86D20A_LIBV413.OBJ)
+     00h     0009h     0009h    0001h      CODE               LIBRARY_VERSION (C:\Users\ADMINI~1\AppData\Local\Temp\BS86D20A_LIBV413.OBJ)
+     00h     000ch     000fh    0004h      CODE               TIME_BASE_INT (C:\Users\ADMINI~1\AppData\Local\Temp\BS86D20A_LIBV413.OBJ)
+     00h     0010h     008ch    007dh      CODE               MAIN_PROGRAM (E:\旧电脑资料\收集的资料\手册\合泰\BS86D20A_20150319_LIBV413--V3\20150319_LIBV413\OUTPUT\MAIN_PROGRAM_V102.OBJ)
+     00h     008dh     0591h    0505h      CODE               TKS_LIBRARY_CODE (C:\Users\ADMINI~1\AppData\Local\Temp\BS86D20A_LIBV413.OBJ)
+     00h     0592h     0596h    0005h      CODE               _Interrupt_Extemal (E:\旧电脑资料\收集的资料\手册\合泰\BS86D20A_20150319_LIBV413--V3\20150319_LIBV413\OUTPUT\USER_PROGRAM.OBJ)
+     00h     0597h     059ah    0004h      CODE               _USER_PROGRAM_INITIAL (E:\旧电脑资料\收集的资料\手册\合泰\BS86D20A_20150319_LIBV413--V3\20150319_LIBV413\OUTPUT\USER_PROGRAM.OBJ)
+     00h     059bh     05a3h    0009h      CODE               _USER_PROGRAM (E:\旧电脑资料\收集的资料\手册\合泰\BS86D20A_20150319_LIBV413--V3\20150319_LIBV413\OUTPUT\USER_PROGRAM.OBJ)
+     00h     0080h     00b4h    0035h      DATA     0.5094    TKS_LIBRARY_DATA0 (C:\Users\ADMINI~1\AppData\Local\Temp\BS86D20A_LIBV413.OBJ)
+     00h     00b5h     00b6h    0002h      DATA     3         MAIN_DATA (E:\旧电脑资料\收集的资料\手册\合泰\BS86D20A_20150319_LIBV413--V3\20150319_LIBV413\OUTPUT\MAIN_PROGRAM_V102.OBJ)
+     00h     00b7h     00b7h    0001h      DATA     2         @data_r104 (isr:ra~rh)
+     00h     00b8h     00b8h    0001h      DATA     2         @data_r204 (isr:ra~rh)
+     01h     0080h     00bbh    003ch      DATA     0         TKS_LIBRARY_DATA1 (C:\Users\ADMINI~1\AppData\Local\Temp\BS86D20A_LIBV413.OBJ)
+     02h     0080h     00cfh    0050h      DATA     0         TKS_LIBRARY_DATA2 (C:\Users\ADMINI~1\AppData\Local\Temp\BS86D20A_LIBV413.OBJ)
+     03h     0080h     00cfh    0050h      DATA     0         TKS_LIBRARY_DATA3 (C:\Users\ADMINI~1\AppData\Local\Temp\BS86D20A_LIBV413.OBJ)
+
+     Local Sections
+
+     Bank    Start     End      Length     Class    AvgIns    Name
+     00h     00b9h     00b9h    0000h      LOCAL    0         @dummy4 (E:\旧电脑资料\收集的资料\手册\合泰\BS86D20A_20150319_LIBV413--V3\20150319_LIBV413\OUTPUT\USER_PROGRAM.OBJ)
+     00h     00b9h     00b9h    0000h      LOCAL    0         _Interrupt_Extemal (E:\旧电脑资料\收集的资料\手册\合泰\BS86D20A_20150319_LIBV413--V3\20150319_LIBV413\OUTPUT\USER_PROGRAM.OBJ)
+
+     Indepentent Local Sections
+
+     Bank    Start     End      Length     Class    AvgIns    Name
+     02h     00d0h     00d0h    0000h      ILOCAL   0         _USER_PROGRAM_INITIAL (E:\旧电脑资料\收集的资料\手册\合泰\BS86D20A_20150319_LIBV413--V3\20150319_LIBV413\OUTPUT\USER_PROGRAM.OBJ)
+     02h     00d0h     00d0h    0000h      ILOCAL   0         _USER_PROGRAM (E:\旧电脑资料\收集的资料\手册\合泰\BS86D20A_20150319_LIBV413--V3\20150319_LIBV413\OUTPUT\USER_PROGRAM.OBJ)
+
+     Public Symbols Information
+     Address            Public by Name
+     00b4h[3]           _ANY_KEY_PRESSF
+     008dh              _BS86D20A_LIBV413
+     0144h              _BS86D20A_LIBV413_INITIAL
+     01d0h              _CHECK_KEY_WAKEUP
+     0097h              _DATA_BUF
+     00b4h[0]           _FORCE_CALIBRATEF
+     057ah              _GET_ENV_VALUE
+     056eh              _GET_KEY_AMOUNT
+     0570h              _GET_KEY_BITMAP
+     0569h              _GET_LIB_VER
+     0577h              _GET_RCC_VALUE
+     057dh              _GET_REF_VALUE
+     0080h              _GLOBE_VARIES
+     0592h              _Interrupt_Extemal
+     00a5h              _KEY_DATA
+     00a2h              _KEY_IO_SEL
+     0280h              _KEY_REF
+     0180h              _KEY_STATUS
+     0144h              _LIBRARY_RESET
+     0058h              _LOAD_HXT_REFERENCE
+     0058h              _LOAD_TKS_GLOBE_VARIES
+     009fh              _SAMPLE_TIMES
+     00b4h[2]           _SCAN_CYCLEF
+     00a0h              _STANDBY_TIME
+     00b4h[5]           _TKS_250MSF
+     00b4h[6]           _TKS_500MSF
+     00b4h[4]           _TKS_63MSF
+     00b4h[1]           _TKS_ACTIVEF
+     00b4h              _TKS_FLAGA
+     00a1h              _TKS_TIME_BASE
+     059bh              _USER_PROGRAM
+     0597h              _USER_PROGRAM_INITIAL
+     00b7h              r104
+     00b8h              r204
+
+     Address            Public by Value
+     0058h              _LOAD_HXT_REFERENCE
+     0058h              _LOAD_TKS_GLOBE_VARIES
+     0080h              _GLOBE_VARIES
+     008dh              _BS86D20A_LIBV413
+     0097h              _DATA_BUF
+     009fh              _SAMPLE_TIMES
+     00a0h              _STANDBY_TIME
+     00a1h              _TKS_TIME_BASE
+     00a2h              _KEY_IO_SEL
+     00a5h              _KEY_DATA
+     00b4h              _TKS_FLAGA
+     00b7h              r104
+     00b8h              r204
+     0144h              _BS86D20A_LIBV413_INITIAL
+     0144h              _LIBRARY_RESET
+     0180h              _KEY_STATUS
+     01d0h              _CHECK_KEY_WAKEUP
+     0280h              _KEY_REF
+     0569h              _GET_LIB_VER
+     056eh              _GET_KEY_AMOUNT
+     0570h              _GET_KEY_BITMAP
+     0577h              _GET_RCC_VALUE
+     057ah              _GET_ENV_VALUE
+     057dh              _GET_REF_VALUE
+     0592h              _Interrupt_Extemal
+     0597h              _USER_PROGRAM_INITIAL
+     059bh              _USER_PROGRAM
+     00b4h[0]           _FORCE_CALIBRATEF
+     00b4h[1]           _TKS_ACTIVEF
+     00b4h[2]           _SCAN_CYCLEF
+     00b4h[3]           _ANY_KEY_PRESSF
+     00b4h[4]           _TKS_63MSF
+     00b4h[5]           _TKS_250MSF
+     00b4h[6]           _TKS_500MSF
+
+
+ROM Usage Statistics
+     Size      Used     Percentage
+     2000h     05a2h    17%
+
+RAM Usage Statistics
+    Bank      Size      Used     Percentage
+     00h       0080h     0039h    44%
+     01h       0080h     003ch    46%
+     02h       0080h     0050h    62%
+     03h       0080h     0050h    62%
+     04h       0080h     0000h    0%
+     05h       0080h     0000h    0%
+     Total     0300h     0115h    36%
+
+Use Stack Count
+_Interrupt_Extemal: 0
+_USER_PROGRAM: 0
+
+Call Tree
+    @dummy4
+        _Interrupt_Extemal (0)
+    _USER_PROGRAM
+
+HLINK : 程序的开始执行点在程序段'PROGRAM_ENTRY'（地址0）。定义在'E:\旧电脑资料\收集的资料\手册\合泰\BS86D20A_20150319_LIBV413--V3\20150319_LIBV413\OUTPUT\MAIN_PROGRAM_V102.OBJ' 文件中
+
+错误总数 : 0  警告总数 : 0
